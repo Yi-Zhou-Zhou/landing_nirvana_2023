@@ -1,0 +1,101 @@
+/* Tailwind Config */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth !important;
+    }
+}
+
+
+/* Custom fonts */
+/* @font-face {
+    font-family: "CamptonLight";
+    src: local("Campton Light"),
+        url("./assets/fonts/Campton/Campton-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "CamptonBold";
+    src: local("Campton Bold"),
+        url("./assets/fonts/Campton/Campton-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-display: swap;
+} */
+
+html {
+  overflow-x: hidden;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+:root {
+    font-family: 'Electrolize', sans-serif;
+
+    box-sizing: border-box;
+}
+
+
+/* Swiper  */
+
+.splide__arrows{
+    display: none;
+}
+
+.splide__pagination li button{
+    color: blue;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.box{
+    transform: rotateX(45deg);
+    animation: all 5s ease;
+}
+
+.box:hover{
+    transform: rotateX(0deg);
+    scale: 1.25;
+}
+
+.object-perspective {
+    -webkit-perspective: 500px;
+    -moz-perspective: 500px;
+    -o-perspective: 500px;
+    perspective: 500px;
+}
+
+.feature-page{
+    scroll-snap-type: y mandatory;
+}
+
+.feature-container{
+    scroll-snap-align: start;
+
+}
+
+.about-section{
+    perspective:450px;
+}
