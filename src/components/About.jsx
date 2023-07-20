@@ -1,11 +1,5 @@
 import React, {useEffect, useRef} from 'react'
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import "@splidejs/splide/dist/css/splide.min.css";
 import { motion, useInView, useScroll } from 'framer-motion';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import nirvana1 from "../assets/images/nirvana1.png"
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import feature1 from "../assets/images/feature1.png"
