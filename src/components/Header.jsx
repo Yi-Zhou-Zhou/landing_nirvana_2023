@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { TypeAnimation } from 'react-type-animation';
 import {IoIosArrowForward} from "react-icons/io";
 import { motion } from "framer-motion"
 const Header = ({colorMode, featureIsVisible}) => {
