@@ -187,7 +187,7 @@ const About = ({currEl, setCurrEl}) => {
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textTitleTransition}>Título de prueba. Segunda Feature
+           transition={textTitleTransition}>Desata el Poder de la Inteligencia Artificial conectada a tu BBDD
           </motion.p>
 
           <motion.p className='mb-8 text-white text-xl'
@@ -237,14 +237,14 @@ const About = ({currEl, setCurrEl}) => {
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textTitleTransition}>Título de prueba. Tercera Feature
+           transition={textTitleTransition}>El Mejor Aliado para Resolver Desafíos en Equipo
           </motion.p>
 
           <motion.p className='mb-8 text-white text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textDescriptionTransition}>Mientras charlan en equipo, usa el comando para activar a Nirvana AI y solicitar ayuda
+           transition={textDescriptionTransition}>Mientras chateas, usa el comando para activar a Nirvana AI y solicitar ayuda.
            </motion.p>
 
            <motion.div className='bg-[#F72585] w-fit px-4 py-2 rounded-md text-xl text-white'
@@ -307,7 +307,7 @@ const About = ({currEl, setCurrEl}) => {
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textTitleTransition}>Título de prueba. Tercera Feature
+           transition={textTitleTransition}>Extiende Tu Poder con Reuniones Grabadas y Minutas Compartidas
           </motion.p>
 
           <motion.p className='mb-8 text-white text-xl'
@@ -357,14 +357,14 @@ const About = ({currEl, setCurrEl}) => {
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textTitleTransition}>Título de prueba. Tercera Feature
+           transition={textTitleTransition}>¿Necesitas resolver una tarea con información específica?
           </motion.p>
 
           <motion.p className='mb-8 text-white text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textDescriptionTransition}>¿Necesitas resolver una tarea con información específica? Entrena un agente con IA con tus documentos y resuelve en menos tiempo
+           transition={textDescriptionTransition}>Entrena un agente con IA con tus documentos y resuelve en menos tiempo. 
            </motion.p>
 
            <motion.div className='bg-[#F72585] w-fit px-4 py-2 rounded-md text-xl text-white'
