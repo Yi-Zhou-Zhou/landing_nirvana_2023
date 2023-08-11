@@ -17,14 +17,29 @@ const HomePage = () => {
   const containerIsVisible = useInView(containerRef)
 
   const [currEl, setCurrEl] = useState(null)
+  
+  const [scrollPosition, setScrollPosition] = useState(0);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      
+      const handleScroll = () => {
+        const position = window.scrollY;
+        setScrollPosition(position);
+      }
+
+      window.addEventListener("scroll", handleScroll);
+   
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [])
 
   useEffect(() => {
     setCurrEl(featuresRef)
   }, [featureIsVisible])
   return (
     <div className='dark:bg-[#131819]'>
-      <Navbar setColorMode={setColorMode} colorMode={colorMode}/>
+      <Navbar setColorMode={setColorMode} colorMode={colorMode} scrollPosition={scrollPosition}/>
       <Header colorMode={colorMode} featureIsVisible={featureIsVisible}/>
         <Features featuresRef={featuresRef}/>
       <div ref={containerRef}

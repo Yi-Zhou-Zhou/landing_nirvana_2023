@@ -14,7 +14,7 @@ const Contact = () => {
     visible: {translateY: "0"}
   }
   return (
-    <motion.section id='contact-us' className='section flex py-20 bg-[#FDF6FB] dark:bg-[#1c253d]  flex-wrap px-8 md:px-48 xs:gap-8 sm:gap-16  w-screen overflow-hidden'
+    <motion.section id='contact' className='section flex py-20 bg-[#FDF6FB] dark:bg-[#1c253d]  flex-wrap px-8 md:px-48 xs:gap-8 sm:gap-16  w-screen overflow-hidden'
       initial="hidden"
       whileInView="visible"
       variants={moveToRight}

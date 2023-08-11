@@ -99,3 +99,16 @@ html {
 .about-section{
     perspective:450px;
 }
+
+/* Scroll padding */
+
+#features{
+    scroll-margin-top: 8rem;
+
+} 
+#about{
+    scroll-margin-top: 4rem;
+}
+#contact{
+    scroll-margin-top: 12rem;
+}

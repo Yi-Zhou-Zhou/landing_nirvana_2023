@@ -139,7 +139,7 @@ const About = ({currEl, setCurrEl}) => {
           </motion.div>
         </div>
         
-        <motion.div className='sm:w-full shadow-[0px_0px_15px_10px_#F72585,0px_40px_40px_10px_#232c2e] rounded-xl'
+        <motion.div className='sm:w-full shadow-[0px_15px_15px_5px_#212a2b] rounded-xl'
         initial="hidden"
         whileInView="visible"
         variants={textImgVariant}
@@ -168,7 +168,7 @@ const About = ({currEl, setCurrEl}) => {
             duration:1.5
           }}>
           
-            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl shadow-[0px_0px_15px_10px_#F72585,0px_40px_40px_10px_#232c2e]'/>
+            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl shadow-[0px_15px_15px_5px_#212a2b]'/>
             <div>
 
             
@@ -271,7 +271,7 @@ const About = ({currEl, setCurrEl}) => {
           duration:1.5
         }}>
         
-          <img src={feature3} alt="nirvana functionality"  className='rounded-xl shadow-[0px_0px_15px_10px_#F72585,0px_40px_40px_10px_#232c2e]'/>
+          <img src={feature3} alt="nirvana functionality"  className='rounded-xl shadow-[0px_15px_15px_5px_#212a2b]'/>
         </motion.div>
       </div>
     </motion.div>
@@ -293,7 +293,7 @@ const About = ({currEl, setCurrEl}) => {
           duration:1.5
         }}>
         
-          <img src={feature4} alt="nirvana functionality"  className='w-full rounded-xl shadow-[0px_0px_15px_10px_#F72585,0px_40px_40px_10px_#232c2e]'/>
+          <img src={feature4} alt="nirvana functionality"  className='w-full rounded-xl shadow-[0px_15px_15px_5px_#212a2b]'/>
         </motion.div>
         <div className='flex flex-col  w-full'>
           <motion.p className='bg-[#343839] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
@@ -391,7 +391,7 @@ const About = ({currEl, setCurrEl}) => {
           duration:1.5
         }}>
         
-          <img src={feature5} alt="nirvana functionality"  className='shadow-[0px_0px_15px_10px_#F72585,0px_40px_40px_10px_#232c2e] rounded-xl'/>
+          <img src={feature5} alt="nirvana functionality"  className='shadow-[0px_15px_15px_5px_#212a2b] rounded-xl'/>
         </motion.div>
       </div>
     </motion.div>
