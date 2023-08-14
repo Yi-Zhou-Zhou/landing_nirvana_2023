@@ -17,7 +17,7 @@ const Contact = () => {
 
   const [t] = useTranslation("global")
   return (
-    <motion.section id='contact' className='section flex py-20 bg-[#FDF6FB] dark:bg-[#091455]  flex-wrap px-8 md:px-48 xs:gap-8 sm:gap-16  w-screen overflow-hidden'
+    <motion.section id='contact' className='section flex py-20 bg-[#091455]  flex-wrap px-8 md:px-48 xs:gap-8 sm:gap-16  w-screen overflow-hidden'
       initial="hidden"
       whileInView="visible"
       variants={moveToRight}

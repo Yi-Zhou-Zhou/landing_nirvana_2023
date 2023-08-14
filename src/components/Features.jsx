@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next'
 const Features = ({featuresRef}) => {
   const [t] = useTranslation("global")
   return (
-    <section id='features' className='section flex flex-col  items-center justify-center  text-[#36305C] px-12 font-bold dark:text-white -mb-px md:-mb-0 min-h-screen   pb-8 md:px-48 xl:px-64' >
+    <section id='features' className='section flex flex-col  items-center justify-center  px-12 font-bold  -mb-px md:-mb-0 min-h-screen   pb-8 md:px-48 xl:px-64' >
       
-      <p className='text-4xl md:text-5xl text-[#faf5e8] font-bold flex  mb-12'>{t("benefits.title")}</p>
+      <p className='text-4xl md:text-5xl dark:text-[#faf5e8] text-black font-bold flex  mb-12'>{t("benefits.title")}</p>
 
       <div className='flex gap-12 flex-wrap  pt-12  w-full md:w-full  justify-center' ref={featuresRef}>
           

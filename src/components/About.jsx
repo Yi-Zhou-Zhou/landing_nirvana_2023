@@ -129,14 +129,14 @@ const About = ({currEl, setCurrEl}) => {
           </motion.div>
          
 
-          <motion.p className='text-5xl mb-8 text-[#faf5e8] font-semibold'
+          <motion.p className='text-5xl mb-8 dark:text-[#faf5e8] font-semibold text-black'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
            transition={textTitleTransition}>{t("applications.title1")}
           </motion.p>
 
-          <motion.p className='mb-8 text-white text-xl'
+          <motion.p className='mb-8 dark:text-[#faf5e8] text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
@@ -191,9 +191,9 @@ const About = ({currEl, setCurrEl}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#f5430c] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
+            <p className='bg-[#b5179e] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
 
-            <div className='bg-[#f5430c] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
+            <div className='bg-[#b5179e] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
            whileInView="visible"
            variants={{
@@ -210,14 +210,14 @@ const About = ({currEl, setCurrEl}) => {
           </div>
           </motion.div>
 
-          <motion.p className='text-5xl mb-8 text-[#faf5e8] font-semibold'
+          <motion.p className='text-5xl mb-8 dark:text-[#faf5e8] text-black font-semibold'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
            transition={textTitleTransition}>{t("applications.title2")}
           </motion.p>
 
-          <motion.p className='mb-8 text-white text-xl'
+          <motion.p className='mb-8 dark:text-[#faf5e8] text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
@@ -247,9 +247,9 @@ const About = ({currEl, setCurrEl}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#fff717] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
+            <p className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
 
-            <div className='bg-[#fff717] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
+            <div className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
            whileInView="visible"
            variants={{
@@ -266,14 +266,14 @@ const About = ({currEl, setCurrEl}) => {
           </div>
           </motion.div>
 
-          <motion.p className='text-5xl mb-8 text-[#faf5e8] font-semibold'
+          <motion.p className='text-5xl mb-8 dark:text-[#faf5e8] text-black font-semibold'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
            transition={textTitleTransition}>{t("applications.title3")}
           </motion.p>
 
-          <motion.p className='mb-8 text-white text-xl'
+          <motion.p className='mb-8 dark:text-[#faf5e8] text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
@@ -323,9 +323,9 @@ const About = ({currEl, setCurrEl}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#e417ff] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
+            <p className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
 
-            <div className='bg-[#e417ff] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
+            <div className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
            whileInView="visible"
            variants={{
@@ -342,14 +342,14 @@ const About = ({currEl, setCurrEl}) => {
           </div>
           </motion.div>
 
-          <motion.p className='text-5xl mb-8 text-[#faf5e8] font-semibold'
+          <motion.p className='text-5xl mb-8 dark:text-[#faf5e8] text-black font-semibold'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
            transition={textTitleTransition}>{t("applications.title4")}
           </motion.p>
 
-          <motion.p className='mb-8 text-white text-xl'
+          <motion.p className='mb-8 dark:text-[#faf5e8] text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
@@ -397,14 +397,14 @@ const About = ({currEl, setCurrEl}) => {
           </div>
           </motion.div>
 
-          <motion.p className='text-5xl mb-8 text-[#faf5e8] font-semibold'
+          <motion.p className='text-5xl mb-8 text-black dark:text-[#faf5e8] font-semibold'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
            transition={textTitleTransition}>{t("applications.title5")}
           </motion.p>
 
-          <motion.p className='mb-8 text-white text-xl'
+          <motion.p className='mb-8 dark:text-[#faf5e8] text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
@@ -440,9 +440,9 @@ const About = ({currEl, setCurrEl}) => {
               </div>
             </div>
   
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold '>{t("applications.title1")}</p>
+            <p className='text-5xl mb-8 text-black dark:text-[#faf5e8] font-semibold '>{t("applications.title1")}</p>
   
-            <p className=' text-white text-xl'>{t("applications.description1")}
+            <p className=' dark:text-[#faf5e8] text-xl'>{t("applications.description1")}
             </p>
 
           </div>
@@ -467,9 +467,9 @@ const About = ({currEl, setCurrEl}) => {
               </div>
             </div>
   
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>{t("applications.title2")}</p>
+            <p className='text-5xl mb-8 text-black dark:text-[#faf5e8] font-semibold'>{t("applications.title2")}</p>
   
-            <p className=' text-white text-xl'>{t("applications.description2")}
+            <p className=' dark:text-[#faf5e8] text-xl'>{t("applications.description2")}
             </p>
           </div>
           
@@ -485,31 +485,9 @@ const About = ({currEl, setCurrEl}) => {
                 <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
               </div>
             </div>
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>{t("applications.title3")}</p>
+            <p className='text-5xl mb-8 text-black dark:text-[#faf5e8] font-semibold'>{t("applications.title3")}</p>
   
-            <p className='text-white'>{t("applications.description3")}
-            </p>
-  
-          </div>
-          
-          <div className='sm:w-full'>
-            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl'/>
-          </div>
-        </div>
-      </div>
-
-      <div className='' ref={thirdRef}>
-        <div className='w-full flex  items-center sm:flex-row flex-col justify-center md:gap-24 gap-24 md:px-48 px-8 '> 
-          <div className='flex flex-col  w-full'>
-          <div className='flex gap-4 flex-wrap mb-8'>
-              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
-              <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
-              </div>
-            </div>
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>{t("applications.title4")}</p>
-  
-            <p className='text-white'>{t("applications.description4")}
+            <p className='dark:text-[#faf5e8]'>{t("applications.description3")}
             </p>
   
           </div>
@@ -529,9 +507,31 @@ const About = ({currEl, setCurrEl}) => {
                 <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
               </div>
             </div>
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>{t("applications.title5")}</p>
+            <p className='text-5xl mb-8 text-black dark:text-[#faf5e8] font-semibold'>{t("applications.title4")}</p>
   
-            <p className='text-white'>{t("applications.description5")}
+            <p className='dark:text-[#faf5e8]'>{t("applications.description4")}
+            </p>
+  
+          </div>
+          
+          <div className='sm:w-full'>
+            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl'/>
+          </div>
+        </div>
+      </div>
+
+      <div className='' ref={thirdRef}>
+        <div className='w-full flex  items-center sm:flex-row flex-col justify-center md:gap-24 gap-24 md:px-48 px-8 '> 
+          <div className='flex flex-col  w-full'>
+          <div className='flex gap-4 flex-wrap mb-8'>
+              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
+              <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
+                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
+              </div>
+            </div>
+            <p className='text-5xl mb-8 text-black dark:text-[#faf5e8] font-semibold'>{t("applications.title5")}</p>
+  
+            <p className='dark:text-[#faf5e8]'>{t("applications.description5")}
             </p>
   
           </div>

@@ -31,11 +31,7 @@ html {
   overflow-x: hidden;
   margin: 0;
   scroll-behavior: smooth;
-  background-image: url("./assets//images//background2.png") !important;
-  -webkit-background-size: cover;
-    background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 15%;
+
   
 }
 

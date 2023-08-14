@@ -14,7 +14,6 @@ const HomePage = () => {
   const featureIsVisible = useInView(featuresRef)
   
   const containerRef = useRef(null)
-  const containerIsVisible = useInView(containerRef)
 
   const [currEl, setCurrEl] = useState(null)
   
@@ -38,7 +37,7 @@ const HomePage = () => {
     setCurrEl(featuresRef)
   }, [featureIsVisible])
   return (
-    <div className=''>
+    <div className='dark:bg-darkBg bg-lightBg' style={{backgroundSize: "cover"}}>
       <Navbar setColorMode={setColorMode} colorMode={colorMode} scrollPosition={scrollPosition}/>
       <Header colorMode={colorMode} featureIsVisible={featureIsVisible}/>
         <Features featuresRef={featuresRef}/>

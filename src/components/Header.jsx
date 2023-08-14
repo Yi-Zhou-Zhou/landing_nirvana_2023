@@ -9,12 +9,12 @@ const Header = ({colorMode, featureIsVisible}) => {
   return (
     <header id='home' className={`flex flex-col items-center justify-between w-full relative min-h-[calc(100vh-6rem)] md:py-12 py-12 mb-12 px-10 md:px-24`}>
       <div className='flex flex-col items-start md:w-7/12 sm:py-24  '>
-          <p className=' text-2xl text-white mb-6 '>{t("header.subtitle")}</p>
+          <p className=' text-2xl dark:text-[#faf5e8] text-black mb-6 font-semibold '>{t("header.subtitle")}</p>
           <div className=' text-5xl sm:text-6xl text-[#F72585] font-bold mb-6'>
             
             <p>{t("header.title")}</p>
           </div>
-          <p className='text-2xl text-white inline-block mb-36 md:mb-0 w-full '>{t("header.description")}</p>
+          <p className='text-2xl dark:text-[#faf5e8] text-black inline-block mb-36 md:mb-0 w-full font-semibold'>{t("header.description")}</p>
         </div>
         <motion.div className='hover:cursor-pointer font-bold  flex  group'
         initial={{
@@ -32,8 +32,8 @@ const Header = ({colorMode, featureIsVisible}) => {
             repeatDelay:0
           }
         }}>
-          <IoIosArrowForward size={24} color='white' className='group-hover:rotate-90 duration-700'/>
-          <button className='rounded-full text-white'
+          <IoIosArrowForward size={24}  className='group-hover:rotate-90 duration-700 dark:text-[#faf5e8] text-black'/>
+          <button className='rounded-full dark:text-[#faf5e8] text-black font-bold'
         >
           {t("header.cta")}
         </button>

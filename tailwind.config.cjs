@@ -16,8 +16,9 @@ module.exports = {
 
       },
       backgroundImage:
-      {"hero": "url('assets/images/HeaderBG.svg')",
-        "darkHero": "url('assets/images/DarkHeaderBG.svg')",
+      {
+      "darkBg": "url('assets/images/background.png')",
+      "lightBg": "url('assets/images/background_light.png')",
       "astronaut": "url('assets/images/Astronaut2.png')",
       "moon": "url('assets/images/moon.png')",
       "stars": "url('assets/images/stars.png')",
