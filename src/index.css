@@ -40,17 +40,6 @@ html {
     box-sizing: border-box;
 }
 
-
-/* Swiper  */
-
-.splide__arrows{
-    display: none;
-}
-
-.splide__pagination li button{
-    color: blue;
-}
-
 /* Scrollbar */
 
 ::-webkit-scrollbar-track{

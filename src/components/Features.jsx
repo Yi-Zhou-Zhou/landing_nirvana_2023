@@ -1,7 +1,7 @@
 import React from 'react'
 import BenefitsCard from './BenefitsCard'
 import { motion } from "framer-motion"
-import { HandPointing, Smiley, UsersThree, CloudArrowUp, LineSegments, ChatsCircle, Fire, FileLock, Archive} from 'phosphor-react'
+import { HandPointing, Smiley, UsersThree, CloudArrowUp, LineSegments, ChatsCircle, Fire, FileLock, Archive } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 const Features = ({featuresRef}) => {
   const [t] = useTranslation("global")

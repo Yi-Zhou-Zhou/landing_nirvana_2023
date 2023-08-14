@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar'
 import useColorMode from '../hooks/useColorMode'
 import Contact from '../components/Contact'
 import { useInView } from 'framer-motion'
-import { motion } from 'framer-motion'
+
 const HomePage = () => {
   const [colorMode, setColorMode] = useColorMode();
   
@@ -46,7 +46,7 @@ const HomePage = () => {
           
         }}
       > 
-        <About currEl={currEl} setCurrEl={setCurrEl} />
+        <About currEl={currEl} setCurrEl={setCurrEl} colorMode={colorMode} />
         <Contact/>
 
       </div>

@@ -5,13 +5,15 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 import feature1 from "../assets/images/feature1.png"
 import feature2_1 from "../assets/images/feature2-1.png"
 import feature2_2 from "../assets/images/feature2-2.png"
+import feature2_dark from "../assets/images/feature2.gif"
+import feature2_light from "../assets/images/feature2_light.gif"
 import feature3 from "../assets/images/feature3.png"
 import feature4 from "../assets/images/feature4.png"
 import feature5 from "../assets/images/feature5.png"
-import { ArrowRight } from 'phosphor-react';
+import { ArrowRight } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 
-const About = ({currEl, setCurrEl}) => {
+const About = ({currEl, setCurrEl, colorMode}) => {
 
   const firstRef = useRef(null)
   const firstIsInView = useInView(firstRef)
@@ -28,7 +30,7 @@ const About = ({currEl, setCurrEl}) => {
 
   const { scrollYProgress } = useScroll();
 
-  console.log(fifthIsInView)
+  console.log("color mode is: ", colorMode)
 
   useEffect(() => {
     if (firstIsInView) {
@@ -146,7 +148,7 @@ const About = ({currEl, setCurrEl}) => {
            
         </div>
         
-        <motion.div className='sm:w-full shadow-[0px_15px_15px_5px_#212a2b] rounded-xl'
+        <motion.div className='sm:w-full  rounded-xl'
         initial="hidden"
         whileInView="visible"
         variants={textImgVariant}
@@ -154,7 +156,7 @@ const About = ({currEl, setCurrEl}) => {
           duration:1.5
         }}>
           
-          <img src={feature1} alt="nirvana functionality"  className='rounded-xl  '/>
+          <img src={feature1} alt="nirvana functionality"  className='rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999]  '/>
         </motion.div>
       </div>
     </motion.div>
@@ -175,11 +177,8 @@ const About = ({currEl, setCurrEl}) => {
             duration:1.5
           }}>
           
-            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl shadow-[0px_15px_15px_5px_#212a2b]'/>
+            <img src={colorMode === "dark" ? feature2_dark : feature2_light} alt="nirvana functionality"  className='rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999]'/>
             <div>
-
-            
-            <img src={feature2_2} alt="" className='absolute right-0 bottom-0 opacity-0 group-hover:opacity-100 duration-1000'/>
             </div>
         </motion.div>
         <div className='flex flex-col  w-full'>
@@ -191,7 +190,7 @@ const About = ({currEl, setCurrEl}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#b5179e] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
+            <p className='bg-[#b5179e] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>Tag de prueba</p>
 
             <div className='bg-[#b5179e] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
@@ -205,7 +204,7 @@ const About = ({currEl, setCurrEl}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
+            <button className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></button>
             
           </div>
           </motion.div>
@@ -247,7 +246,7 @@ const About = ({currEl, setCurrEl}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
+            <p className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>Tag de prueba</p>
 
             <div className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
@@ -261,7 +260,7 @@ const About = ({currEl, setCurrEl}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
+            <button className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></button>
             
           </div>
           </motion.div>
@@ -290,7 +289,7 @@ const About = ({currEl, setCurrEl}) => {
           duration:1.5
         }}>
         
-          <img src={feature3} alt="nirvana functionality"  className='rounded-xl shadow-[0px_15px_15px_5px_#212a2b]'/>
+          <img src={feature3} alt="nirvana functionality"  className='rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999] '/>
         </motion.div>
       </div>
     </motion.div>
@@ -312,7 +311,7 @@ const About = ({currEl, setCurrEl}) => {
           duration:1.5
         }}>
         
-          <img src={feature4} alt="nirvana functionality"  className='w-full rounded-xl shadow-[0px_15px_15px_5px_#212a2b]'/>
+          <img src={feature4} alt="nirvana functionality"  className='w-full rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999]'/>
         </motion.div>
         <div className='flex flex-col  w-full'>
         <motion.div className='flex gap-4 flex-wrap '
@@ -323,7 +322,7 @@ const About = ({currEl, setCurrEl}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
+            <p className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>Tag de prueba</p>
 
             <div className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
@@ -337,7 +336,7 @@ const About = ({currEl, setCurrEl}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
+            <button className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></button>
             
           </div>
           </motion.div>
@@ -421,7 +420,7 @@ const About = ({currEl, setCurrEl}) => {
           duration:1.5
         }}>
         
-          <img src={feature5} alt="nirvana functionality"  className='shadow-[0px_15px_15px_5px_#212a2b] rounded-xl'/>
+          <img src={feature5} alt="nirvana functionality"  className='dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999] rounded-xl'/>
         </motion.div>
       </div>
     </motion.div>

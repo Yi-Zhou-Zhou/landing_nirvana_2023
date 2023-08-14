@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {List, X, Moon, Sun} from 'phosphor-react';
+import { List, X, Moon, Sun, Globe } from '@phosphor-icons/react';
 import logo from "../assets/images/logo.png"
 import { useTranslation } from 'react-i18next';
-import { Globe } from 'phosphor-react';
 
 const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
   const [nav, setNav] = useState(false);

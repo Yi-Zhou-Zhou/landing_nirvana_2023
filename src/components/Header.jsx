@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next';
-import {CaretRight, ArrowRight} from 'phosphor-react';
+import { CaretRight } from '@phosphor-icons/react';
 const Header = ({colorMode, featureIsVisible}) => {
 
   const [t] = useTranslation("global")
