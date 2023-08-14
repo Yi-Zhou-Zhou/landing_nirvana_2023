@@ -32,6 +32,25 @@
         "cardTitle9": "Diverse tasks",
         "cardDescription9": "Connect to your databases and files: csv, pdf, doc, docx, xls"
     },
-    "applications": {},
-    "contact": {}
+    "applications": {
+        "cta": "Go to Nirvana",
+        "title1": "Upload, Save, and Return",
+        "description1": "Upload files to Nirvana and save completed tasks to revisit them when needed",
+        "title2": "Unleash the Power of AI Connected to Your Database",
+        "description2": "Connect and analyze documents in your database",
+        "title3": "The Best Ally for Team Problem-Solving",
+        "description3": "While chatting, use the command to activate Nirvana AI and request assistance.",
+        "title4": "Expand Your Reach with Recorded Meetings and Shared Minutes",
+        "description4": "Utilize Nirvana AI's powerful extensions to record meetings and instantly share minutes",
+        "title5": "Need to Solve a Task with Specific Information?",
+        "description5": "Train an AI agent with your documents and solve tasks in less time."
+    },
+    "contact": {
+        "title": "Start Your New Life with",
+        "input1": "Name",
+        "input2": "Email",
+        "input3": "Phone (Optional)",
+        "input4": "Message (Optional)",
+        "cta": "Send"
+    }
 }

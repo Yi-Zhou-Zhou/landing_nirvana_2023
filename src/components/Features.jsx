@@ -1,6 +1,5 @@
 import React from 'react'
 import BenefitsCard from './BenefitsCard'
-import {BsHandThumbsUp} from 'react-icons/bs'
 import { motion } from "framer-motion"
 import { HandPointing, Smiley, UsersThree, CloudArrowUp, LineSegments, ChatsCircle, Fire, FileLock, Archive} from 'phosphor-react'
 import { useTranslation } from 'react-i18next'

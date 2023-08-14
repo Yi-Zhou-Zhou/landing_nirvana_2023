@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import logo from "../assets/images/logo.png"
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
+import { Globe } from 'phosphor-react';
 
 const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
   const [nav, setNav] = useState(false);
@@ -11,8 +12,13 @@ const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
   const handleNav = () => {
     setNav(!nav);
   };
-    let themeButton;
+  const [lang, setLang] = useState("es")
 
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
+
+  let themeButton;
 	if (colorMode === 'light'){
         themeButton = <BsFillMoonFill size={28} className="cursor-pointer" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}/>
     }
@@ -22,24 +28,26 @@ const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
 
   return (
     <>
-    <nav className={`fixed flex  ${scrollPosition >= 20 ? "mt-4 w-10/12 rounded-3xl left-2/4 -translate-x-2/4 border" : "left-0 border-none"} duration-1000 dark:text-white justify-between items-center h-20 w-full px-4 text-black top-0 shadow-md -2 md:px-20  align-middle  z-50`}>
+    <nav className={`fixed flex glass-navbar border-none  ${scrollPosition >= 20 ? "mt-4 w-10/12 rounded-3xl left-2/4 -translate-x-2/4" : " left-0 right-0"} duration-700 dark:text-white justify-between items-center h-20 w-full px-4 text-black top-0 shadow-md -2 md:px-20  align-middle  z-50`}>
       <a href="#home" className='h-3/6 md:h-4/6 flex items-center'>
         <img src={logo} alt="myfutureai_logo"  className="ml-4 h-5/6 w-full dark:brightness-0 dark:invert"/>
 
       </a>
-      <ul className='hidden md:flex items-center gap-2'>
-        <li className='p-4 text-xl font-bold' ><a href='#features'>{t("navbar.benefits")}</a></li>
-        <li className='p-4 text-xl font-bold'><a href='#about'>{t("navbar.applications")}</a></li>
-        <li className='p-4 text-xl font-bold'><a href='#contact'>{t("navbar.contact")}</a></li>
+      <ul className='hidden md:flex items-center gap-8'>
+        <li className='text-xl font-bold' ><a href='#features'>{t("navbar.benefits")}</a></li>
+        <li className='text-xl font-bold'><a href='#about'>{t("navbar.applications")}</a></li>
+        <li className='text-xl font-bold'><a href='#contact'>{t("navbar.contact")}</a></li>
         
         
       </ul>
 
-      <div className='hidden md:flex gap-4 items-center'>
-        <button className='p-4 text-xl font-bold'>
-        {t("navbar.login")}
-        </button>
+      <div className='hidden md:flex gap-8 items-center'>
+        <button className='text-xl font-bold'>{t("navbar.login")}</button>
         {themeButton}
+        <div className='flex gap-1 items-center cursor-pointer' onClick={() => lang === "es" ? setLang("en") : setLang("es")}>
+          <Globe size={28}/>
+          <p className='text-xl font-bold'>{lang.toLocaleUpperCase()}</p>
+        </div>
 
       </div>
       <div  className='block md:hidden flex items-center gap-4'>

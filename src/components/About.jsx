@@ -9,6 +9,7 @@ import feature3 from "../assets/images/feature3.png"
 import feature4 from "../assets/images/feature4.png"
 import feature5 from "../assets/images/feature5.png"
 import { ArrowRight } from 'phosphor-react';
+import { useTranslation } from 'react-i18next';
 
 const About = ({currEl, setCurrEl}) => {
 
@@ -86,9 +87,7 @@ const About = ({currEl, setCurrEl}) => {
     duration:1,
     delay:0.4
   }
-
-  const buttonRef = useRef(null)
-  const buttonIsInView = useInView(buttonRef)
+  const [t] = useTranslation("global")
 
   let body;
   if (width >= 768 && height >= 465){
@@ -124,7 +123,7 @@ const About = ({currEl, setCurrEl}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>Ir a Nirvana <ArrowRight size={18}/></button>
+            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
             
           </div>
           </motion.div>
@@ -134,14 +133,14 @@ const About = ({currEl, setCurrEl}) => {
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textTitleTransition}>Carga, guarda y vuelve
+           transition={textTitleTransition}>{t("applications.title1")}
           </motion.p>
 
           <motion.p className='mb-8 text-white text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textDescriptionTransition}>Sube archivos a Nirvana y guarda las tareas resueltas para volver a ellas cuando necesites
+           transition={textDescriptionTransition}>{t("applications.description1")}
            </motion.p>
 
            
@@ -206,7 +205,7 @@ const About = ({currEl, setCurrEl}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>Ir a Nirvana <ArrowRight size={18}/></button>
+            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
             
           </div>
           </motion.div>
@@ -215,14 +214,14 @@ const About = ({currEl, setCurrEl}) => {
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textTitleTransition}>Desata el Poder de la Inteligencia Artificial conectada a tu BBDD
+           transition={textTitleTransition}>{t("applications.title2")}
           </motion.p>
 
           <motion.p className='mb-8 text-white text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textDescriptionTransition}>Conecta y analiza documentos en tu base de datos
+           transition={textDescriptionTransition}>{t("applications.description2")}
            </motion.p>
 
         </div>
@@ -262,7 +261,7 @@ const About = ({currEl, setCurrEl}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>Ir a Nirvana <ArrowRight size={18}/></button>
+            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
             
           </div>
           </motion.div>
@@ -271,14 +270,14 @@ const About = ({currEl, setCurrEl}) => {
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textTitleTransition}>El Mejor Aliado para Resolver Desafíos en Equipo
+           transition={textTitleTransition}>{t("applications.title3")}
           </motion.p>
 
           <motion.p className='mb-8 text-white text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textDescriptionTransition}>Mientras chateas, usa el comando para activar a Nirvana AI y solicitar ayuda.
+           transition={textDescriptionTransition}>{t("applications.description3")}
            </motion.p>
 
         </div>
@@ -338,7 +337,7 @@ const About = ({currEl, setCurrEl}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>Ir a Nirvana <ArrowRight size={18}/></button>
+            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
             
           </div>
           </motion.div>
@@ -347,14 +346,14 @@ const About = ({currEl, setCurrEl}) => {
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textTitleTransition}>Extiende Tu Poder con Reuniones Grabadas y Minutas Compartidas
+           transition={textTitleTransition}>{t("applications.title4")}
           </motion.p>
 
           <motion.p className='mb-8 text-white text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textDescriptionTransition}>Usa las poderosas extensiones de Nirvana AI para grabar reuniones y compartir una minuta al instante
+           transition={textDescriptionTransition}>{t("applications.description4")}
            </motion.p>
         </div>
         
@@ -393,7 +392,7 @@ const About = ({currEl, setCurrEl}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>Ir a Nirvana <ArrowRight size={18}/></button>
+            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
             
           </div>
           </motion.div>
@@ -402,14 +401,14 @@ const About = ({currEl, setCurrEl}) => {
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textTitleTransition}>¿Necesitas resolver una tarea con información específica?
+           transition={textTitleTransition}>{t("applications.title5")}
           </motion.p>
 
           <motion.p className='mb-8 text-white text-xl'
            initial="hidden"
            whileInView="visible"
            variants={textPVariant}
-           transition={textDescriptionTransition}>Entrena un agente con IA con tus documentos y resuelve en menos tiempo. 
+           transition={textDescriptionTransition}>{t("applications.description5")}
            </motion.p>
 
         </div>
@@ -437,13 +436,13 @@ const About = ({currEl, setCurrEl}) => {
             <div className='flex gap-4 flex-wrap mb-8'>
               <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit '>Tag de prueba</p>
               <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>Ir a Nirvana <ArrowRight size={18}/></button>
+                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
               </div>
             </div>
   
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold '>Carga, guarda y vuelve</p>
+            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold '>{t("applications.title1")}</p>
   
-            <p className=' text-white text-xl'>Sube archivos a Nirvana y guarda las tareas resueltas para volver a ellas cuando necesites
+            <p className=' text-white text-xl'>{t("applications.description1")}
             </p>
 
           </div>
@@ -464,13 +463,13 @@ const About = ({currEl, setCurrEl}) => {
           <div className='flex gap-4 flex-wrap mb-8'>
               <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
               <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>Ir a Nirvana <ArrowRight size={18}/></button>
+                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
               </div>
             </div>
   
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>Desata el Poder de la Inteligencia Artificial conectada a tu BBDD</p>
+            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>{t("applications.title2")}</p>
   
-            <p className=' text-white text-xl'>Conecta y analiza documentos en tu base de datos
+            <p className=' text-white text-xl'>{t("applications.description2")}
             </p>
           </div>
           
@@ -483,34 +482,12 @@ const About = ({currEl, setCurrEl}) => {
           <div className='flex gap-4 flex-wrap mb-8'>
               <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
               <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>Ir a Nirvana <ArrowRight size={18}/></button>
+                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
               </div>
             </div>
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>El Mejor Aliado para Resolver Desafíos en Equipo</p>
+            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>{t("applications.title3")}</p>
   
-            <p className='text-white'>Mientras chateas, usa el comando para activar a Nirvana AI y solicitar ayuda.
-            </p>
-  
-          </div>
-          
-          <div className='sm:w-full'>
-            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl'/>
-          </div>
-        </div>
-      </div>
-
-      <div className='' ref={thirdRef}>
-        <div className='w-full flex  items-center sm:flex-row flex-col justify-center md:gap-24 gap-24 md:px-48 px-8 '> 
-          <div className='flex flex-col  w-full'>
-          <div className='flex gap-4 flex-wrap mb-8'>
-              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
-              <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>Ir a Nirvana <ArrowRight size={18}/></button>
-              </div>
-            </div>
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>Extiende Tu Poder con Reuniones Grabadas y Minutas Compartidas</p>
-  
-            <p className='text-white'>Usa las poderosas extensiones de Nirvana AI para grabar reuniones y compartir una minuta al instante
+            <p className='text-white'>{t("applications.description3")}
             </p>
   
           </div>
@@ -527,12 +504,34 @@ const About = ({currEl, setCurrEl}) => {
           <div className='flex gap-4 flex-wrap mb-8'>
               <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
               <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>Ir a Nirvana <ArrowRight size={18}/></button>
+                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
               </div>
             </div>
-            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>¿Necesitas resolver una tarea con información específica?</p>
+            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>{t("applications.title4")}</p>
   
-            <p className='text-white'>Entrena un agente con IA con tus documentos y resuelve en menos tiempo. 
+            <p className='text-white'>{t("applications.description4")}
+            </p>
+  
+          </div>
+          
+          <div className='sm:w-full'>
+            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl'/>
+          </div>
+        </div>
+      </div>
+
+      <div className='' ref={thirdRef}>
+        <div className='w-full flex  items-center sm:flex-row flex-col justify-center md:gap-24 gap-24 md:px-48 px-8 '> 
+          <div className='flex flex-col  w-full'>
+          <div className='flex gap-4 flex-wrap mb-8'>
+              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
+              <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
+                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
+              </div>
+            </div>
+            <p className='text-5xl mb-8 text-[#faf5e8] font-semibold'>{t("applications.title5")}</p>
+  
+            <p className='text-white'>{t("applications.description5")}
             </p>
   
           </div>

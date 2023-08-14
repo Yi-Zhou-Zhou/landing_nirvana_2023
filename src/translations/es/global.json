@@ -35,10 +35,28 @@
 
     },
     "applications":{
+        "cta": "Ir a Nirvana",
+        "title1": "Carga, guarda y vuelve",
+        "description1": "Sube archivos a Nirvana y guarda las tareas resueltas para volver a ellas cuando necesites",
+        "title2": "Desata el Poder de la Inteligencia Artificial conectada a tu BBDD",
+        "description2": "Conecta y analiza documentos en tu base de datos",
+        "title3": "El Mejor Aliado para Resolver Desafíos en Equipo",
+        "description3": "Mientras chateas, usa el comando para activar a Nirvana AI y solicitar ayuda.",
+        "title4": "Extiende Tu Poder con Reuniones Grabadas y Minutas Compartidas",
+        "description4": "Usa las poderosas extensiones de Nirvana AI para grabar reuniones y compartir una minuta al instante",
+        "title5": "¿Necesitas resolver una tarea con información específica?",
+        "description5": "Entrena un agente con IA con tus documentos y resuelve en menos tiempo."
+
 
     },
     "contact":{
-
+        "title": "Comienza tu nueva vida con",
+        "input1": "Nombre",
+        "input2": "Correo electrónico",
+        "input3": "Teléfono (Opcional)",
+        "input4": "Mensaje (Opcional)",
+        "cta": "Enviar"
+    
     }
 
 }
