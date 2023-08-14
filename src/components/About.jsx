@@ -8,7 +8,7 @@ import feature2_2 from "../assets/images/feature2-2.png"
 import feature2_dark from "../assets/images/feature2.gif"
 import feature2_light from "../assets/images/feature2_light.gif"
 import feature3 from "../assets/images/feature3.png"
-import feature4 from "../assets/images/feature4.png"
+import feature4 from "../assets/images/feature4_2.png"
 import feature5 from "../assets/images/feature5.png"
 import { ArrowRight } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
@@ -177,7 +177,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
             duration:1.5
           }}>
           
-            <img src={colorMode === "dark" ? feature2_dark : feature2_light} alt="nirvana functionality"  className='rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999]'/>
+            <img src={colorMode === "dark" ? feature2_dark : feature2_light} alt="nirvana functionality"  className='rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#d4d2d2]'/>
             <div>
             </div>
         </motion.div>
@@ -311,7 +311,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
           duration:1.5
         }}>
         
-          <img src={feature4} alt="nirvana functionality"  className='w-full rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999]'/>
+          <img src={feature4} alt="nirvana functionality"  className='w-full rounded-xl'/>
         </motion.div>
         <div className='flex flex-col  w-full'>
         <motion.div className='flex gap-4 flex-wrap '
