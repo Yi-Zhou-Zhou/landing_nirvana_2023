@@ -35,7 +35,7 @@ const Header = ({colorMode, featureIsVisible}) => {
           <IoIosArrowForward size={24} color='white' className='group-hover:rotate-90 duration-700'/>
           <button className='rounded-full text-white'
         >
-          {t("header")}
+          {t("header.cta")}
         </button>
         </motion.div>
     </header>
