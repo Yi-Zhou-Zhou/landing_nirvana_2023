@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import {List, X, Moon, Sun} from 'phosphor-react';
 import logo from "../assets/images/logo.png"
-import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
 import { Globe } from 'phosphor-react';
 
@@ -20,10 +19,10 @@ const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
 
   let themeButton;
 	if (colorMode === 'light'){
-        themeButton = <BsFillMoonFill size={28} className="cursor-pointer" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}/>
+        themeButton = <Moon size={28} className="cursor-pointer" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}/>
     }
     else{
-        themeButton = <BsFillSunFill size={28} className="cursor-pointer" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}/>
+        themeButton = <Sun size={28} className="cursor-pointer" onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}/>
     }
 
   return (
@@ -51,7 +50,7 @@ const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
 
       </div>
       <div  className='block md:hidden flex items-center gap-4'>
-          {nav ? <AiOutlineClose size={20} onClick={handleNav}/> : <AiOutlineMenu size={20} onClick={handleNav} />}
+          {nav ? <X size={20} onClick={handleNav}/> : <List size={20} onClick={handleNav} />}
           {themeButton}
       </div>
       
@@ -59,7 +58,7 @@ const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
     
     <ul className={nav ? 'fixed z-50 w-screen  h-screen  dark:bg-[#131819] bg-[#472E6D] text-white font-bold ease-in duration-500' : 'ease-in hidden duration-500 fixed -translate-y-100' }>
       <div className='mb-12'>
-        <AiOutlineClose size={32} onClick={handleNav} className='absolute right-10 top-5'/>
+        <X size={32} onClick={handleNav} className='absolute right-10 top-5'/>
       </div>
       <div className='px-12 sm:px-28 flex flex-col gap-4 text-md'>
         <li className='border-b py-4'><a href="#home" className='h-3/6 md:h-4/6' onClick={handleNav}>Home</a></li>

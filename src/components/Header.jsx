@@ -1,8 +1,7 @@
 import React from 'react'
-
-import {IoIosArrowForward} from "react-icons/io";
 import { motion } from "framer-motion"
 import { useTranslation } from 'react-i18next';
+import {CaretRight, ArrowRight} from 'phosphor-react';
 const Header = ({colorMode, featureIsVisible}) => {
 
   const [t] = useTranslation("global")
@@ -32,7 +31,7 @@ const Header = ({colorMode, featureIsVisible}) => {
             repeatDelay:0
           }
         }}>
-          <IoIosArrowForward size={24}  className='group-hover:rotate-90 duration-700 dark:text-[#faf5e8] text-black'/>
+          <CaretRight size={24}  className='group-hover:rotate-90 duration-700 dark:text-[#faf5e8] text-black'/>
           <button className='rounded-full dark:text-[#faf5e8] text-black font-bold'
         >
           {t("header.cta")}

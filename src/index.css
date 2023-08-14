@@ -82,25 +82,6 @@ html {
     scale: 1.25;
 }
 
-.object-perspective {
-    -webkit-perspective: 500px;
-    -moz-perspective: 500px;
-    -o-perspective: 500px;
-    perspective: 500px;
-}
-
-.feature-page{
-    scroll-snap-type: y mandatory;
-}
-
-.feature-container{
-    scroll-snap-align: start;
-
-}
-
-.about-section{
-    perspective:450px;
-}
 
 /* Scroll padding */
 

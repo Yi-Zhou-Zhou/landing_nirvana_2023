@@ -52,6 +52,5 @@ module.exports = {
     },
   },
   plugins: [
-    require("tailwindcss-3d")({ legacy: true }),
   ],
 };
