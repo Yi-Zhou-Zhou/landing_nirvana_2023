@@ -1,0 +1,44 @@
+{
+    "navbar": {
+        "benefits": "Beneficios",
+        "applications": "Aplicaciones",
+        "contact": "Contacto",
+        "login": "Acceder"
+    },
+    "header": {
+        "subtitle": "Multiplica tu potencial",
+        "title": "Accede a todo el poder de múltiples herramientas AI desde una simple conversación",
+        "description": "Descubre la simplicidad de la AI que transformará tu vida, en cada palabra y exprime todo su potencial",
+        "cta": "¡Empieza Ahora!"
+    },
+    "benefits":{
+        "title":  "Nirvana AI es tu plartaforma asistente para todas tus necesidades y tareas del día a día",
+        "cardTitle1": "Ahorra tiempo",
+        "cardDescription1": "Todo a un click, en una sola plataforma",
+        "cardTitle2": "Amigable al usuario",
+        "cardDescription2": "Experiencia intuitiva y conversacional",
+        "cardTitle3": "IA colectiva",
+        "cardDescription3": "IA para colaborar en equipo",
+        "cardTitle4": "Administra tus archivos",
+        "cardDescription4": "Carga, guarda y trabaja con tus archivos",
+        "cardTitle5": "Aumenta eficiencia",
+        "cardDescription5": "Mejora flujos de trabajo",
+        "cardTitle6": "Agentes con IA",
+        "cardDescription6": "Genera asistentes personalizados y externos",
+        "cardTitle7": "IA versátil y avanzada",
+        "cardDescription7": "Resuelve todo en Nirvana sin las restricciones típicas de los LLMs",
+        "cardTitle8": "Protección de datos",
+        "cardDescription8": "Salvaguarda datos de tu empresa",
+        "cardTitle9": "Tareas diversas",
+        "cardDescription9": "Conecta con tus BBDD y archivos: csv, pdf, doc, docx, xls"
+
+
+    },
+    "applications":{
+
+    },
+    "contact":{
+
+    }
+
+}

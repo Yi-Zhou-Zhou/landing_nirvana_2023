@@ -31,10 +31,16 @@ html {
   overflow-x: hidden;
   margin: 0;
   scroll-behavior: smooth;
+  background-image: url("./assets//images//background2.png") !important;
+  -webkit-background-size: cover;
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 15%;
+  
 }
-:root {
-    font-family: 'Electrolize', sans-serif;
 
+:root {
+    font-family: 'PT Sans', sans-serif;
     box-sizing: border-box;
 }
 
@@ -111,4 +117,13 @@ html {
 }
 #contact{
     scroll-margin-top: 12rem;
+}
+
+.glass{
+    background: rgba( 255, 255, 255, 0.05 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 1.5px );
+-webkit-backdrop-filter: blur( 1.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

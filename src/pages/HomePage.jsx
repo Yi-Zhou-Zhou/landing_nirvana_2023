@@ -38,7 +38,7 @@ const HomePage = () => {
     setCurrEl(featuresRef)
   }, [featureIsVisible])
   return (
-    <div className='dark:bg-[#131819]'>
+    <div className=''>
       <Navbar setColorMode={setColorMode} colorMode={colorMode} scrollPosition={scrollPosition}/>
       <Header colorMode={colorMode} featureIsVisible={featureIsVisible}/>
         <Features featuresRef={featuresRef}/>

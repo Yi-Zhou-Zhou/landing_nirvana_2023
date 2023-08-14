@@ -2,11 +2,14 @@ import React from 'react'
 import BenefitsCard from './BenefitsCard'
 import {BsHandThumbsUp} from 'react-icons/bs'
 import { motion } from "framer-motion"
+import { HandPointing, Smiley, UsersThree, CloudArrowUp, LineSegments, ChatsCircle, Fire, FileLock, Archive} from 'phosphor-react'
+import { useTranslation } from 'react-i18next'
 const Features = ({featuresRef}) => {
+  const [t] = useTranslation("global")
   return (
-    <section id='features' className='section flex flex-col  items-center justify-center dark:bg-[#131819] bg-[#FDF6FB] text-[#36305C] px-12 font-bold dark:text-white -mb-px md:-mb-0 min-h-screen   pb-8 md:px-48 xl:px-64' >
+    <section id='features' className='section flex flex-col  items-center justify-center  text-[#36305C] px-12 font-bold dark:text-white -mb-px md:-mb-0 min-h-screen   pb-8 md:px-48 xl:px-64' >
       
-      <p className='text-4xl md:text-5xl text-[#F72585] font-bold flex  mb-12'>Nirvana AI es tu plartaforma asistente para todas tus necesidades y tareas del día a día</p>
+      <p className='text-4xl md:text-5xl text-[#faf5e8] font-bold flex  mb-12'>{t("benefits.title")}</p>
 
       <div className='flex gap-12 flex-wrap  pt-12  w-full md:w-full  justify-center' ref={featuresRef}>
           
@@ -21,7 +24,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title="Ahorra tiempo" description="Todo a un click, en una sola plataforma" icon={<BsHandThumbsUp></BsHandThumbsUp>}/>
+          <BenefitsCard title={t("benefits.cardTitle1")} description={t("benefits.cardDescription1")} icon={<HandPointing color='white' size={28}/>} color={`#f72585`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -34,7 +37,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title="Amigable al usuario" description="Experiencia intuitiva y conversacional" icon={<BsHandThumbsUp></BsHandThumbsUp>}/>
+          <BenefitsCard title={t("benefits.cardTitle2")} description={t("benefits.cardDescription2")} icon={<Smiley color='white' size={28}/>} color={`#f72585`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -47,7 +50,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title="IA colectiva" description="IA para colaborar en equipo" icon={<BsHandThumbsUp></BsHandThumbsUp>}/>
+          <BenefitsCard title={t("benefits.cardTitle3")} description={t("benefits.cardDescription3")} icon={<UsersThree color='white' size={28}/>} color={`#f72585`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -60,7 +63,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title="Administra tus archivos" description="Carga, guarda y trabaja con tus archivos" icon={<BsHandThumbsUp></BsHandThumbsUp>}/>
+          <BenefitsCard title={t("benefits.cardTitle4")} description={t("benefits.cardDescription4")} icon={<CloudArrowUp color='white' size={28}/>} color={`#b5179e`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -73,7 +76,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title="Aumenta eficiencia" description="Mejora flujos de trabajo" icon={<BsHandThumbsUp></BsHandThumbsUp>}/>
+          <BenefitsCard title={t("benefits.cardTitle5")} description={t("benefits.cardDescription5")} icon={<LineSegments color='white' size={28}/>} color={`#b5179e`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -86,7 +89,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title="Agentes con IA" description="Genera asistentes personalizados y externos" icon={<BsHandThumbsUp></BsHandThumbsUp>}/>
+          <BenefitsCard title={t("benefits.cardTitle6")} description={t("benefits.cardDescription6")} icon={<ChatsCircle color='white' size={28}/>} color={`#b5179e`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -99,7 +102,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title="IA versátil y avanzada" description="Resuelve todo en Nirvana sin las restricciones típicas de los LLMs" icon={<BsHandThumbsUp></BsHandThumbsUp>}/>
+          <BenefitsCard title={t("benefits.cardTitle7")} description={t("benefits.cardDescription7")} icon={<Fire color='white' size={28}/>} color={`#4361ee`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -112,7 +115,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title="Protección de datos" description="Salvaguarda datos de tu empresa" icon={<BsHandThumbsUp></BsHandThumbsUp>}/>
+          <BenefitsCard title={t("benefits.cardTitle8")} description={t("benefits.cardDescription8")} icon={<FileLock color='white' size={28}/>} color={`#4361ee`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -125,7 +128,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title="Tareas diversas" description="Conecta con tus BBDD y archivos: csv, pdf, doc, docx, xls" icon={<BsHandThumbsUp></BsHandThumbsUp>}/>
+          <BenefitsCard title={t("benefits.cardTitle9")} description={t("benefits.cardDescription9")} icon={<Archive color='white' size={28}/>} color={`#4361ee`}/>
           </motion.div>
           
       </div>

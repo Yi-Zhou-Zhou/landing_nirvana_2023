@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 const Header = ({colorMode, featureIsVisible}) => {
 
   return (
-    <header id='home' className={`flex flex-col items-center justify-between w-full dark:bg-[#131819] relative min-h-[calc(100vh-6rem)] md:py-12 py-12 mb-12 px-10 md:px-24  `}>
+    <header id='home' className={`flex flex-col items-center justify-between w-full relative min-h-[calc(100vh-6rem)] md:py-12 py-12 mb-12 px-10 md:px-24  `}>
       <div className='flex flex-col items-start md:w-7/12 sm:py-24  '>
           <p className=' text-2xl text-white mb-6 '>Multiplica tu potencial</p>
           <div className=' text-5xl sm:text-6xl text-[#F72585] font-bold mb-6'>

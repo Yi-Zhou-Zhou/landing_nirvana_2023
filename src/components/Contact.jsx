@@ -14,7 +14,7 @@ const Contact = () => {
     visible: {translateY: "0"}
   }
   return (
-    <motion.section id='contact' className='section flex py-20 bg-[#FDF6FB] dark:bg-[#1c253d]  flex-wrap px-8 md:px-48 xs:gap-8 sm:gap-16  w-screen overflow-hidden'
+    <motion.section id='contact' className='section flex py-20 bg-[#FDF6FB] dark:bg-[#091455]  flex-wrap px-8 md:px-48 xs:gap-8 sm:gap-16  w-screen overflow-hidden'
       initial="hidden"
       whileInView="visible"
       variants={moveToRight}
@@ -69,7 +69,7 @@ const Contact = () => {
             <label for="floating_standard" class="absolute text-sm text-gray-500 dark:text-white duration-300 transform -translate-y-6 scale-75 top-0 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje (Opcional)</label>
           </div>
         </motion.div>
-        <motion.button className='bg-[#F72585] text-white w-fit px-4 py-2 text-xl self-end'
+        <motion.button className='bg-[#F72585] text-white w-fit px-4 py-2 text-xl self-end rounded-full'
         variants={moveToTop}
         transition={{
           duration: 1

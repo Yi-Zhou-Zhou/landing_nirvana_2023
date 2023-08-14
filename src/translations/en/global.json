@@ -1,0 +1,37 @@
+{
+    "navbar": {
+        "benefits": "Benefits",
+        "applications": "Applications",
+        "contact": "Contact",
+        "login": "Login"
+    },
+    "header": {
+        "subtitle": "Multiply your potential",
+        "title": "Access all the power of multiple AI tools through a simple conversation",
+        "description": "Discover the simplicity of AI that will transform your life, in every word, and harness all its potential",
+        "cta": "Get Started Now!"
+    },
+    "benefits": {
+        "title": "Nirvana AI is your assistant platform for all your daily needs and tasks",
+        "cardTitle1": "Save time",
+        "cardDescription1": "Everything at a click, all in one platform",
+        "cardTitle2": "User-friendly",
+        "cardDescription2": "Intuitive and conversational experience",
+        "cardTitle3": "Collective AI",
+        "cardDescription3": "AI for team collaboration",
+        "cardTitle4": "Manage your files",
+        "cardDescription4": "Upload, save, and work with your files",
+        "cardTitle5": "Increase efficiency",
+        "cardDescription5": "Improve workflows",
+        "cardTitle6": "AI-powered agents",
+        "cardDescription6": "Generate personalized and external assistants",
+        "cardTitle7": "Versatile and advanced AI",
+        "cardDescription7": "Solve everything in Nirvana without the typical restrictions of LLMs",
+        "cardTitle8": "Data protection",
+        "cardDescription8": "Safeguard your company's data",
+        "cardTitle9": "Diverse tasks",
+        "cardDescription9": "Connect to your databases and files: csv, pdf, doc, docx, xls"
+    },
+    "applications": {},
+    "contact": {}
+}

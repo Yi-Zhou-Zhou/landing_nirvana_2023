@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import logo from "../assets/images/logo.png"
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
   const [nav, setNav] = useState(false);
-
+  
+  const [t, i18n] = useTranslation("global")
   const handleNav = () => {
     setNav(!nav);
   };
@@ -20,22 +22,22 @@ const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
 
   return (
     <>
-    <nav className={`fixed flex  ${scrollPosition >= 20 ? "mt-4 w-10/12 rounded-3xl left-2/4 -translate-x-2/4 border" : "left-0 border-none"} duration-1000 dark:bg-[#131819] dark:text-white justify-between items-center h-20 w-full px-4 text-black top-0 shadow-md -2 md:px-20  align-middle bg-white z-50`}>
+    <nav className={`fixed flex  ${scrollPosition >= 20 ? "mt-4 w-10/12 rounded-3xl left-2/4 -translate-x-2/4 border" : "left-0 border-none"} duration-1000 dark:text-white justify-between items-center h-20 w-full px-4 text-black top-0 shadow-md -2 md:px-20  align-middle  z-50`}>
       <a href="#home" className='h-3/6 md:h-4/6 flex items-center'>
         <img src={logo} alt="myfutureai_logo"  className="ml-4 h-5/6 w-full dark:brightness-0 dark:invert"/>
 
       </a>
       <ul className='hidden md:flex items-center gap-2'>
-        <li className='p-4 text-xl font-bold' ><a href='#features'>Beneficios</a></li>
-        <li className='p-4 text-xl font-bold'><a href='#about'>Aplicaciones</a></li>
-        <li className='p-4 text-xl font-bold'><a href='#contact'>Contacto</a></li>
+        <li className='p-4 text-xl font-bold' ><a href='#features'>{t("navbar.benefits")}</a></li>
+        <li className='p-4 text-xl font-bold'><a href='#about'>{t("navbar.applications")}</a></li>
+        <li className='p-4 text-xl font-bold'><a href='#contact'>{t("navbar.contact")}</a></li>
         
         
       </ul>
 
       <div className='hidden md:flex gap-4 items-center'>
         <button className='p-4 text-xl font-bold'>
-          Login
+        {t("navbar.login")}
         </button>
         {themeButton}
 
