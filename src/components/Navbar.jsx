@@ -61,10 +61,24 @@ const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
       <div className='mb-12'>
         <AiOutlineClose size={32} onClick={handleNav} className='absolute right-10 top-5'/>
       </div>
-      <div className='px-12 sm:px-28 flex flex-col gap-4'>
+      <div className='px-12 sm:px-28 flex flex-col gap-4 text-md'>
         <li className='border-b py-4'><a href="#home" className='h-3/6 md:h-4/6' onClick={handleNav}>Home</a></li>
         <li className='border-b py-4'><a href='#features' onClick={handleNav}>Beneficios</a></li>
         <li className='border-b py-4'><a href='#about' onClick={handleNav}>Aplicaciones</a></li>
+        <li className='border-b py-4'>
+          <div className='flex gap-1 items-center cursor-pointer' onClick={() => {
+            if (lang === "es"){
+              setLang("en")
+            }
+            else{
+              setLang("es")
+            }
+            setNav(false)
+          }}>
+            <Globe size={28}/>
+            <p className=''>{lang.toLocaleUpperCase()}</p>
+          </div>
+        </li>
       </div>
 
       </ul>
