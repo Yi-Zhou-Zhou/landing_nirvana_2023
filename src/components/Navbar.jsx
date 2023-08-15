@@ -3,18 +3,14 @@ import { List, X, Moon, Sun, Globe } from '@phosphor-icons/react';
 import logo from "../assets/images/logo.png"
 import { useTranslation } from 'react-i18next';
 
-const Navbar = ({colorMode, setColorMode, scrollPosition}) => {
+const Navbar = ({colorMode, setColorMode, scrollPosition, setLang, lang}) => {
   const [nav, setNav] = useState(false);
   
   const [t, i18n] = useTranslation("global")
   const handleNav = () => {
     setNav(!nav);
   };
-  const [lang, setLang] = useState("es")
 
-  useEffect(() => {
-    i18n.changeLanguage(lang)
-  }, [lang])
 
   let themeButton;
 	if (colorMode === 'light'){

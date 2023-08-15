@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import { motion, useInView, useScroll } from 'framer-motion';
 import nirvana1 from "../assets/images/nirvana1.png"
 import useWindowDimensions from '../hooks/useWindowDimensions';
@@ -7,13 +7,28 @@ import feature2_1 from "../assets/images/feature2-1.png"
 import feature2_2 from "../assets/images/feature2-2.png"
 import feature2_dark from "../assets/images/feature2.gif"
 import feature2_light from "../assets/images/feature2_light.gif"
+import feature_1_en_dark from "../assets/images/components/feature_1_en_dark.gif"
+import feature_1_es_dark from "../assets/images/components/feature_1_es_dark.gif"
+import feature_1_en_light from "../assets/images/components/feature_1_en_light.gif"
+import feature_1_es_light from "../assets/images/components/feature_1_es_light.gif"
+
+import feature_2_en_dark from "../assets/images/components/feature_2_en_dark.png"
+import feature_2_es_dark from "../assets/images/components/feature_2_es_dark.png"
+import feature_2_en_light from "../assets/images/components/feature_2_en_light.png"
+import feature_2_es_light from "../assets/images/components/feature_2_es_light.png"
+
+import feature_3_en_dark from "../assets/images/components/feature_3_en_dark.png"
+import feature_3_es_dark from "../assets/images/components/feature_3_es_dark.png"
+import feature_3_en_light from "../assets/images/components/feature_3_en_light.png"
+import feature_3_es_light from "../assets/images/components/feature_3_es_light.png"
+
 import feature3 from "../assets/images/feature3.png"
 import feature4 from "../assets/images/feature4_2.png"
 import feature5 from "../assets/images/feature5.png"
 import { ArrowRight } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 
-const About = ({currEl, setCurrEl, colorMode}) => {
+const About = ({currEl, setCurrEl, colorMode, lang}) => {
 
   const firstRef = useRef(null)
   const firstIsInView = useInView(firstRef)
@@ -30,7 +45,84 @@ const About = ({currEl, setCurrEl, colorMode}) => {
 
   const { scrollYProgress } = useScroll();
 
-  console.log("color mode is: ", colorMode)
+  const [components, setComponents] = useState([])
+  const getComponent = (feature) => {
+    const arr = []
+    for (const x of Array(3).keys()){
+      
+      switch (x){
+        case 0 :
+          if (colorMode === "dark"){
+            if (lang === "en"){
+              arr.push(feature_1_en_dark)
+            }
+            else{
+              arr.push(feature_1_es_dark)
+            }
+          }
+          else{
+            if (lang === "en"){
+              arr.push(feature_1_en_light)
+            }
+            else{
+              arr.push(feature_1_es_light)
+            }
+            
+          }
+          break;
+
+          case 1 :
+          if (colorMode === "dark"){
+            if (lang === "en"){
+              arr.push(feature_2_en_dark)
+            }
+            else{
+              arr.push(feature_2_es_dark)
+            }
+          }
+          else{
+            if (lang === "en"){
+              arr.push(feature_2_en_light)
+            }
+            else{
+              arr.push(feature_2_es_light)
+            }
+          }
+          break;
+
+
+          case 2 :
+          if (colorMode === "dark"){
+            if (lang === "en"){
+              arr.push(feature_3_en_dark)
+            }
+            else{
+              arr.push(feature_3_es_dark)
+            }
+          }
+          else{
+            if (lang === "en"){
+              arr.push(feature_3_en_light)
+            }
+            else{
+              arr.push(feature_3_es_light)
+            }
+          }
+          break;
+
+          
+          
+      }
+    }
+    setComponents(arr)
+
+    }
+
+
+  useEffect(() =>{
+    setComponents([])
+    getComponent()
+  }, [lang, colorMode])
 
   useEffect(() => {
     if (firstIsInView) {
@@ -156,7 +248,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
           duration:1.5
         }}>
           
-          <img src={feature1} alt="nirvana functionality"  className='rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999]  '/>
+          <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl  '/>
         </motion.div>
       </div>
     </motion.div>
@@ -177,7 +269,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
             duration:1.5
           }}>
           
-            <img src={colorMode === "dark" ? feature2_dark : feature2_light} alt="nirvana functionality"  className='rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#d4d2d2]'/>
+            <img src={components[0]} alt="nirvana functionality"  className='rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#d4d2d2]'/>
             <div>
             </div>
         </motion.div>
@@ -289,7 +381,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
           duration:1.5
         }}>
         
-          <img src={feature3} alt="nirvana functionality"  className='rounded-xl dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999] '/>
+          <img src={components[1]} alt="nirvana functionality"  className='rounded-xl  '/>
         </motion.div>
       </div>
     </motion.div>
@@ -311,7 +403,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
           duration:1.5
         }}>
         
-          <img src={feature4} alt="nirvana functionality"  className='w-full rounded-xl'/>
+          <img src={components[2]} alt="nirvana functionality"  className='w-full rounded-xl'/>
         </motion.div>
         <div className='flex flex-col  w-full'>
         <motion.div className='flex gap-4 flex-wrap '
@@ -420,7 +512,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
           duration:1.5
         }}>
         
-          <img src={feature5} alt="nirvana functionality"  className='dark:shadow-[0px_0px_20px_10px_#212a2b] shadow-[0px_0px_20px_10px_#999999] rounded-xl'/>
+          <img src={feature5} alt="nirvana functionality" />
         </motion.div>
       </div>
     </motion.div>
@@ -492,7 +584,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
           </div>
           
           <div className='sm:w-full'>
-            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl'/>
+            <img src={components[0]} alt="nirvana functionality"  className='rounded-xl'/>
           </div>
         </div>
       </div>
@@ -514,7 +606,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
           </div>
           
           <div className='sm:w-full'>
-            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl'/>
+            <img src={components[1]} alt="nirvana functionality"  className='rounded-xl'/>
           </div>
         </div>
       </div>
@@ -536,7 +628,7 @@ const About = ({currEl, setCurrEl, colorMode}) => {
           </div>
           
           <div className='sm:w-full'>
-            <img src={feature2_1} alt="nirvana functionality"  className='rounded-xl'/>
+            <img src={components[2]} alt="nirvana functionality"  className='rounded-xl'/>
           </div>
         </div>
       </div>

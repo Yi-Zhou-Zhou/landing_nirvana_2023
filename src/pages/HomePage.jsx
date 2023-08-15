@@ -6,18 +6,22 @@ import Navbar from '../components/Navbar'
 import useColorMode from '../hooks/useColorMode'
 import Contact from '../components/Contact'
 import { useInView } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 const HomePage = () => {
   const [colorMode, setColorMode] = useColorMode();
   
   const featuresRef = useRef(null)
   const featureIsVisible = useInView(featuresRef)
-  
   const containerRef = useRef(null)
-
   const [currEl, setCurrEl] = useState(null)
-  
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [t, i18n] = useTranslation("global")
+  const [lang, setLang] = useState("es")
+
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -38,7 +42,7 @@ const HomePage = () => {
   }, [featureIsVisible])
   return (
     <div className='dark:bg-darkBg bg-lightBg' style={{backgroundSize: "cover"}}>
-      <Navbar setColorMode={setColorMode} colorMode={colorMode} scrollPosition={scrollPosition}/>
+      <Navbar setColorMode={setColorMode} colorMode={colorMode} scrollPosition={scrollPosition} setLang={setLang} lang={lang}/>
       <Header colorMode={colorMode} featureIsVisible={featureIsVisible}/>
         <Features featuresRef={featuresRef}/>
       <div ref={containerRef}
@@ -46,7 +50,7 @@ const HomePage = () => {
           
         }}
       > 
-        <About currEl={currEl} setCurrEl={setCurrEl} colorMode={colorMode} />
+        <About currEl={currEl} setCurrEl={setCurrEl} colorMode={colorMode} lang={lang} />
         <Contact/>
 
       </div>
