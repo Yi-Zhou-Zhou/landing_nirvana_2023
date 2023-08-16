@@ -45,7 +45,7 @@ const HomePage = () => {
     <div className='dark:bg-darkBg bg-lightBg' style={{backgroundSize: "cover"}}>
       <Navbar setColorMode={setColorMode} colorMode={colorMode} scrollPosition={scrollPosition} setLang={setLang} lang={lang} svgInView={svgInView}/>
       <Header colorMode={colorMode} featureIsVisible={featureIsVisible} svgInView={svgInView} svgRef={svgRef}/>
-        <Features featuresRef={featuresRef}/>
+        <Features featuresRef={featuresRef} colorMode={colorMode}/>
       <div ref={containerRef}
         animate={{
           

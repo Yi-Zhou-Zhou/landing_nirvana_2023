@@ -1,7 +1,7 @@
 import React from 'react'
 import BenefitsCard from './BenefitsCard'
 import { motion } from "framer-motion"
-import { HandPointing, Smiley, UsersThree, CloudArrowUp, LineSegments, ChatsCircle, Fire, FileLock, Archive } from '@phosphor-icons/react'
+import { HandPointing, Smiley, UsersThree, CloudArrowUp, LineSegments, ChatsCircle, Fire, FileLock, Archive} from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 const Features = ({featuresRef}) => {
   const [t] = useTranslation("global")
@@ -23,7 +23,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title={t("benefits.cardTitle1")} description={t("benefits.cardDescription1")} icon={<HandPointing color='white' size={28}/>} color={`#f72585`}/>
+          <BenefitsCard title={t("benefits.cardTitle1")} description={t("benefits.cardDescription1")} icon={<HandPointing size={28}/>} color={`#f72585`} />
           </motion.div>
           <motion.div
            className='w-80'
@@ -36,7 +36,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title={t("benefits.cardTitle2")} description={t("benefits.cardDescription2")} icon={<Smiley color='white' size={28}/>} color={`#f72585`}/>
+          <BenefitsCard title={t("benefits.cardTitle2")} description={t("benefits.cardDescription2")} icon={<Smiley size={28}/>} color={`#f72585`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -49,7 +49,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title={t("benefits.cardTitle3")} description={t("benefits.cardDescription3")} icon={<UsersThree color='white' size={28}/>} color={`#f72585`}/>
+          <BenefitsCard title={t("benefits.cardTitle3")} description={t("benefits.cardDescription3")} icon={<UsersThree  size={28}/>} color={`#f72585`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -62,7 +62,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title={t("benefits.cardTitle4")} description={t("benefits.cardDescription4")} icon={<CloudArrowUp color='white' size={28}/>} color={`#b5179e`}/>
+          <BenefitsCard title={t("benefits.cardTitle4")} description={t("benefits.cardDescription4")} icon={<CloudArrowUp  size={28}/>} color={`#b5179e`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -75,7 +75,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title={t("benefits.cardTitle5")} description={t("benefits.cardDescription5")} icon={<LineSegments color='white' size={28}/>} color={`#b5179e`}/>
+          <BenefitsCard title={t("benefits.cardTitle5")} description={t("benefits.cardDescription5")} icon={<LineSegments  size={28}/>} color={`#b5179e`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -88,7 +88,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title={t("benefits.cardTitle6")} description={t("benefits.cardDescription6")} icon={<ChatsCircle color='white' size={28}/>} color={`#b5179e`}/>
+          <BenefitsCard title={t("benefits.cardTitle6")} description={t("benefits.cardDescription6")} icon={<ChatsCircle  size={28}/>} color={`#b5179e`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -101,7 +101,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title={t("benefits.cardTitle7")} description={t("benefits.cardDescription7")} icon={<Fire color='white' size={28}/>} color={`#4361ee`}/>
+          <BenefitsCard title={t("benefits.cardTitle7")} description={t("benefits.cardDescription7")} icon={<Fire  size={28}/>} color={`#4361ee`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -114,7 +114,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title={t("benefits.cardTitle8")} description={t("benefits.cardDescription8")} icon={<FileLock color='white' size={28}/>} color={`#4361ee`}/>
+          <BenefitsCard title={t("benefits.cardTitle8")} description={t("benefits.cardDescription8")} icon={<FileLock  size={28}/>} color={`#4361ee`}/>
           </motion.div>
           <motion.div
            className='w-80'
@@ -127,7 +127,7 @@ const Features = ({featuresRef}) => {
               hidden: {opacity: 0}
             }}
           >
-          <BenefitsCard title={t("benefits.cardTitle9")} description={t("benefits.cardDescription9")} icon={<Archive color='white' size={28}/>} color={`#4361ee`}/>
+          <BenefitsCard title={t("benefits.cardTitle9")} description={t("benefits.cardDescription9")} icon={<Archive  size={28}/>} color={`#4361ee`}/>
           </motion.div>
           
       </div>
