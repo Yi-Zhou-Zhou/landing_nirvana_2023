@@ -3,8 +3,7 @@ import { motion, useInView, useScroll,MotionConfig, AnimatePresence } from 'fram
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { ArrowRight } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
-import compare1 from "../assets/images/compare_1_es.png"
-import compare2 from "../assets/images/compare_2_es.png"
+
 const About = ({currEl, setCurrEl, colorMode, lang}) => {
 
   const firstRef = useRef(null)
@@ -22,21 +21,18 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
 
   const { scrollYProgress } = useScroll();
 
+  const [images, setImages] = useState([])
 
-  const images = [
-    compare1,
-    compare2
-  ]
 
   const [selectedImage, setSelectedImage] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      if (selectedImage === 1) {
+      if (selectedImage === 3) {
         setSelectedImage(0);
         return;
       }
       setSelectedImage((prevValue) => {
-        if (prevValue === 1) {
+        if (prevValue === 3) {
           return 0;
         }
         return prevValue + 1;
@@ -49,9 +45,28 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
     hidden: {display: "none", opacity: 0},
     visible: {display: "block", opacity: 1},
     exiting: {display: "none", opacity:0}
-  };
-
+  }; 
   console.log(images[selectedImage])
+  console.log(images)
+
+  useEffect(() => {
+    let newImgs;
+    if (colorMode === "dark"){
+      const image1 = `https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/compare_1_${lang}.png`
+      const image2 = `https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/compare_2_${lang}.png`
+      const image3 = `https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/compare_3_${lang}.png`
+      const image4 = `https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/compare_4_${lang}.png`
+      newImgs = [image1,image2,image3,image4]
+    }
+    else{
+      const image1 = `https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/compare_1_${lang}_L.png`
+      const image2 = `https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/compare_2_${lang}_L.png`
+      const image3 = `https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/compare_3_${lang}_L.png`
+      const image4 = `https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/compare_4_${lang}_L.png`
+      newImgs = [image1,image2,image3,image4]
+    }
+    setImages(newImgs)
+  }, [lang, colorMode])
   useEffect(() => {
     if (firstIsInView) {
       setCurrEl(firstRef)
