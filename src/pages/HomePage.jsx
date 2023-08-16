@@ -15,10 +15,11 @@ const HomePage = () => {
   const featureIsVisible = useInView(featuresRef)
   const containerRef = useRef(null)
   const [currEl, setCurrEl] = useState(null)
+  const svgRef = useRef(null)
+  const svgInView = useInView(svgRef)
   const [scrollPosition, setScrollPosition] = useState(0);
   const [t, i18n] = useTranslation("global")
   const [lang, setLang] = useState("es")
-
   useEffect(() => {
     i18n.changeLanguage(lang)
   }, [lang])
@@ -42,8 +43,8 @@ const HomePage = () => {
   }, [featureIsVisible])
   return (
     <div className='dark:bg-darkBg bg-lightBg' style={{backgroundSize: "cover"}}>
-      <Navbar setColorMode={setColorMode} colorMode={colorMode} scrollPosition={scrollPosition} setLang={setLang} lang={lang}/>
-      <Header colorMode={colorMode} featureIsVisible={featureIsVisible}/>
+      <Navbar setColorMode={setColorMode} colorMode={colorMode} scrollPosition={scrollPosition} setLang={setLang} lang={lang} svgInView={svgInView}/>
+      <Header colorMode={colorMode} featureIsVisible={featureIsVisible} svgInView={svgInView} svgRef={svgRef}/>
         <Features featuresRef={featuresRef}/>
       <div ref={containerRef}
         animate={{
