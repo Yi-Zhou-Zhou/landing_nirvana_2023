@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
-import { motion, useInView } from "framer-motion"
+import React from 'react'
+import { motion} from "framer-motion"
 import { useTranslation } from 'react-i18next';
 import { CaretRight } from '@phosphor-icons/react';
 

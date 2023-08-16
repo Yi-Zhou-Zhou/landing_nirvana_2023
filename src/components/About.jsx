@@ -1,10 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react'
-import { motion, useInView, useScroll } from 'framer-motion';
+import { motion, useInView, useScroll,MotionConfig, AnimatePresence } from 'framer-motion';
 import useWindowDimensions from '../hooks/useWindowDimensions';
-import feature5 from "../assets/images/feature5.png"
 import { ArrowRight } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
-
+import compare1 from "../assets/images/compare_1_es.png"
+import compare2 from "../assets/images/compare_2_es.png"
 const About = ({currEl, setCurrEl, colorMode, lang}) => {
 
   const firstRef = useRef(null)
@@ -22,8 +22,36 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
 
   const { scrollYProgress } = useScroll();
 
-  const [components, setComponents] = useState([])
 
+  const images = [
+    compare1,
+    compare2
+  ]
+
+  const [selectedImage, setSelectedImage] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (selectedImage === 1) {
+        setSelectedImage(0);
+        return;
+      }
+      setSelectedImage((prevValue) => {
+        if (prevValue === 1) {
+          return 0;
+        }
+        return prevValue + 1;
+      });
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [])
+  
+  const variants = {
+    hidden: {display: "none", opacity: 0},
+    visible: {display: "block", opacity: 1},
+    exiting: {display: "none", opacity:0}
+  };
+
+  console.log(images[selectedImage])
   useEffect(() => {
     if (firstIsInView) {
       setCurrEl(firstRef)
@@ -83,7 +111,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
   }
   const [t] = useTranslation("global")
   let body;
-  if (width >= 768 && height >= 465){
+  if (width > 1000 && height >= 465){
     body = <section id='about' className=' md:gap-0' style={{scaleX: scrollYProgress}} >
     <motion.div ref={firstRef} className='relative' 
       animate={{
@@ -409,9 +437,21 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
         variants={textImgVariant}
         transition={{
           duration:1.5
-        }}>
-        
-          <img src={feature5} alt="nirvana functionality" />
+        }}
+        >
+          <MotionConfig transition={{ duration: 2 }}>
+          <AnimatePresence initial={false}>
+            <motion.img
+              key={images[selectedImage]}
+              initial="hidden"
+              animate="visible"
+              exit="exiting"
+              variants={variants}
+              src={images[selectedImage]}
+              alt="src"
+            />
+          </AnimatePresence>
+        </MotionConfig>
         </motion.div>
       </div>
     </motion.div>
@@ -489,7 +529,10 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
       </div>
 
       <div className='' ref={thirdRef}>
-        <div className='w-full flex  items-center sm:flex-row flex-col justify-center md:gap-24 gap-24 md:px-48 px-8 '> 
+        <div className='w-full flex  items-center sm:flex-row flex-col-reverse justify-center md:gap-24 gap-24 md:px-48 px-8 '> 
+        <div className='sm:w-full'>
+            <img src={`https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/extension_${colorMode}_${lang}.png`} alt="nirvana functionality"  className='rounded-xl'/>
+          </div>
           <div className='flex flex-col  w-full'>
           <div className='flex gap-4 flex-wrap mb-8'>
               <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
@@ -504,9 +547,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
   
           </div>
           
-          <div className='sm:w-full'>
-            <img src={`https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/extension_${colorMode}_${lang}.png`} alt="nirvana functionality"  className='rounded-xl'/>
-          </div>
+          
         </div>
       </div>
 
@@ -526,9 +567,27 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
   
           </div>
           
-          <div className='sm:w-full'>
-            <img src="" alt="nirvana functionality"  className='rounded-xl'/>
-          </div>
+          <motion.div className='sm:w-full '
+        initial="hidden"
+        whileInView="visible"
+        variants={textImgVariant}
+        transition={{
+          duration:1.5
+        }}
+        >
+            <motion.img
+              key={images[selectedImage]}
+              initial="hidden"
+              animate="visible"
+              exit="exiting"
+              variants={variants}
+              src={images[selectedImage]}
+              alt="src"
+              transition={{
+                duration: 4
+              }}
+            />
+        </motion.div>
         </div>
       </div>
   </section>

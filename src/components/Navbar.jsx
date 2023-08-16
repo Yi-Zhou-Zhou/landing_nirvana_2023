@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import { List, X, Moon, Sun, Globe } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
-import logo from "../assets/images/logo.svg"
 import { motion } from 'framer-motion';
 const Navbar = ({colorMode, setColorMode, scrollPosition, setLang, lang, svgInView}) => {
   const [nav, setNav] = useState(false);
@@ -78,7 +77,7 @@ const Navbar = ({colorMode, setColorMode, scrollPosition, setLang, lang, svgInVi
       
     </nav>
     
-    <ul className={nav ? 'fixed z-50 w-screen  h-screen  dark:bg-[#131819] bg-[#472E6D] text-white font-bold ease-in duration-500' : 'ease-in hidden duration-500 fixed -translate-y-100' }>
+    <ul className={nav ? 'fixed z-50 w-screen  h-screen  dark:bg-[#131819] bg-[#091455] text-white font-bold ease-in duration-500' : 'ease-in hidden duration-500 fixed -translate-y-100' }>
       <div className='mb-12'>
         <X size={32} onClick={handleNav} className='absolute right-10 top-5'/>
       </div>
