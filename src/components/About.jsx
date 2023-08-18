@@ -46,8 +46,6 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
     visible: {display: "block", opacity: 1},
     exiting: {display: "none", opacity:0}
   }; 
-  console.log(images[selectedImage])
-  console.log(images)
 
   useEffect(() => {
     let newImgs;
@@ -126,6 +124,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
   }
   const [t] = useTranslation("global")
   let body;
+
   if (width > 1000 && height >= 465){
     body = <section id='about' className=' md:gap-0' style={{scaleX: scrollYProgress}} >
     <motion.div ref={firstRef} className='relative' 
@@ -145,7 +144,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#F72585] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
+            <p className='bg-[#F72585] text-white rounded-full font-semibold px-4 py-2 mb-4 w-fit ' >{t("applications.tag1")}</p>
 
             <div className='bg-[#F72585] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
@@ -159,7 +158,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
+            <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
             
           </div>
           </motion.div>
@@ -224,7 +223,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#b5179e] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>Tag de prueba</p>
+            <p className='bg-[#b5179e]  rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>{t("applications.tag2")}</p>
 
             <div className='bg-[#b5179e] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
@@ -238,7 +237,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></button>
+            <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
             
           </div>
           </motion.div>
@@ -280,7 +279,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>Tag de prueba</p>
+            <p className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>{t("applications.tag3")}</p>
 
             <div className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
@@ -294,7 +293,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></button>
+            <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
             
           </div>
           </motion.div>
@@ -356,7 +355,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>Tag de prueba</p>
+            <p className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>{t("applications.tag4")}</p>
 
             <div className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
@@ -370,7 +369,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></button>
+            <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
             
           </div>
           </motion.div>
@@ -411,7 +410,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
              visible: {marginTop: "0px", opacity: 1}
             }}
            transition={textTagTransition}>
-            <p className='bg-[#4895EF]  rounded-full font-semibold px-4 py-2 mb-4 w-fit'>Tag de prueba</p>
+            <p className='bg-[#4895EF]  rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>{t("applications.tag5")}</p>
 
             <div className='bg-[#4895EF] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
            initial="hidden"
@@ -425,7 +424,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
             delay: 0.5
            }}
            >
-            <button className='flex gap-2 items-center'>{t("applications.cta")}<ArrowRight size={18}/></button>
+            <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
             
           </div>
           </motion.div>
@@ -454,8 +453,6 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
           duration:1.5
         }}
         >
-          <MotionConfig transition={{ duration: 2 }}>
-          <AnimatePresence initial={false}>
             <motion.img
               key={images[selectedImage]}
               initial="hidden"
@@ -463,10 +460,12 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
               exit="exiting"
               variants={variants}
               src={images[selectedImage]}
-              alt="src"
+              alt="nirvana functionality"
+              transition={{
+                duration: 3
+              }}
             />
-          </AnimatePresence>
-        </MotionConfig>
+
         </motion.div>
       </div>
     </motion.div>
@@ -479,9 +478,9 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
         <div className='w-full flex  items-center sm:flex-row flex-col justify-center md:gap-24 gap-24 md:px-48 px-8 '> 
           <div className='flex flex-col w-full'>
             <div className='flex gap-4 flex-wrap mb-8'>
-              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit '>Tag de prueba</p>
+              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit text-white '>{t("applications.tag1")}</p>
               <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
+              <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
               </div>
             </div>
   
@@ -506,9 +505,9 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
           </div>
           <div className='flex flex-col  w-full'>
           <div className='flex gap-4 flex-wrap mb-8'>
-              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
+              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit text-white'>{t("applications.tag2")}</p>
               <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
+              <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
               </div>
             </div>
   
@@ -525,9 +524,9 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
         <div className='w-full flex  items-center sm:flex-row flex-col justify-center md:gap-24 gap-24 md:px-48 px-8 '> 
           <div className='flex flex-col  w-full'>
           <div className='flex gap-4 flex-wrap mb-8'>
-              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
+              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit text-white'>{t("applications.tag3")}</p>
               <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
+              <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
               </div>
             </div>
             <p className='text-5xl mb-8 text-black dark:text-[#faf5e8] font-semibold'>{t("applications.title3")}</p>
@@ -550,9 +549,9 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
           </div>
           <div className='flex flex-col  w-full'>
           <div className='flex gap-4 flex-wrap mb-8'>
-              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
+              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit text-white'>{t("applications.tag4")}</p>
               <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
+              <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
               </div>
             </div>
             <p className='text-5xl mb-8 text-black dark:text-[#faf5e8] font-semibold'>{t("applications.title4")}</p>
@@ -570,9 +569,9 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
         <div className='w-full flex  items-center sm:flex-row flex-col justify-center md:gap-24 gap-24 md:px-48 px-8 '> 
           <div className='flex flex-col  w-full'>
           <div className='flex gap-4 flex-wrap mb-8'>
-              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit'>Tag de prueba</p>
+              <p className='bg-[#df02e3] rounded-full font-semibold px-4 py-2 w-fit text-white'>{t("applications.tag5")}</p>
               <div className='bg-[#df02e3] w-fit px-4 py-2 font-semibold rounded-full '>
-                <button className='flex gap-2'>{t("applications.cta")}<ArrowRight size={18}/></button>
+              <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
               </div>
             </div>
             <p className='text-5xl mb-8 text-black dark:text-[#faf5e8] font-semibold'>{t("applications.title5")}</p>
@@ -599,7 +598,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
               src={images[selectedImage]}
               alt="src"
               transition={{
-                duration: 4
+                duration: 3
               }}
             />
         </motion.div>

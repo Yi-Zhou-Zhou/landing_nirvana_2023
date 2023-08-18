@@ -14,48 +14,57 @@
     "benefits":{
         "title":  "Nirvana AI es tu plartaforma asistente para todas tus necesidades y tareas del día a día",
         "cardTitle1": "Ahorra tiempo",
-        "cardDescription1": "Todo a un click, en una sola plataforma",
-        "cardTitle2": "Amigable al usuario",
-        "cardDescription2": "Experiencia intuitiva y conversacional",
+        "cardDescription1": "Todo a un click, en una sola plataforma.",
+        "cardTitle2": "Intuitivo",
+        "cardDescription2": "Experiencia intuitiva y conversacional.",
         "cardTitle3": "IA colectiva",
-        "cardDescription3": "IA para colaborar en equipo",
+        "cardDescription3": "Construye tu equipo e impúlsate con IA.",
         "cardTitle4": "Administra tus archivos",
-        "cardDescription4": "Carga, guarda y trabaja con tus archivos",
+        "cardDescription4": "Carga, guarda y trabaja con tus archivos.",
         "cardTitle5": "Aumenta eficiencia",
-        "cardDescription5": "Mejora flujos de trabajo",
+        "cardDescription5": "Mejora flujos de trabajo.",
         "cardTitle6": "Agentes con IA",
-        "cardDescription6": "Genera asistentes personalizados y externos",
-        "cardTitle7": "IA versátil y avanzada",
-        "cardDescription7": "Resuelve todo en Nirvana sin las restricciones típicas de los LLMs",
+        "cardDescription6": "Genera asistentes personalizados y externos.",
+        "cardTitle7": "IA poderosa",
+        "cardDescription7": "Accede a internet, obtén respuestas precisas y ocupa otras herramientas de nuestros modelos.",
         "cardTitle8": "Protección de datos",
-        "cardDescription8": "Salvaguarda datos de tu empresa",
-        "cardTitle9": "Tareas diversas",
-        "cardDescription9": "Conecta con tus BBDD y archivos: csv, pdf, doc, docx, xls"
+        "cardDescription8": "Salvaguarda datos de tu empresa.",
+        "cardTitle9": "Integraciones",
+        "cardDescription9": "Conéctate a un sin fin de archivos y fuentes de datos."
 
 
     },
     "applications":{
         "cta": "Ir a Nirvana",
         "title1": "Carga, guarda y vuelve",
-        "description1": "Sube archivos a Nirvana y guarda las tareas resueltas para volver a ellas cuando necesites",
-        "title2": "Desata el Poder de la Inteligencia Artificial conectada a tu BBDD",
-        "description2": "Conecta y analiza documentos en tu base de datos",
+        "description1": "Sube archivos a Nirvana, conversaciones y prompts  y vuelve a ellas cuando necesites.",
+        "title2": "Desata el poder de la IA multimodal",
+        "description2": "Conéctate con distintos tipos de datos, analiza documentos, integrate a tus fuentes favoritas.",
         "title3": "El Mejor Aliado para Resolver Desafíos en Equipo",
-        "description3": "Mientras chateas, usa el comando para activar a Nirvana AI y solicitar ayuda.",
-        "title4": "Extiende Tu Poder con Reuniones Grabadas y Minutas Compartidas",
-        "description4": "Usa las poderosas extensiones de Nirvana AI para grabar reuniones y compartir una minuta al instante",
-        "title5": "¿Necesitas resolver una tarea con información específica?",
-        "description5": "Entrena un agente con IA con tus documentos y resuelve en menos tiempo."
+        "description3": "Crea chats con otros usuarios o invitados y añade la IA a tu equipo.",
+        "title4": "Lleva a la IA a todos lados",
+        "description4": "Usa las poderosas extensiones de Nirvana AI para grabar reuniones y para otras tareas.",
+        "title5": "Supera los limites de la IA",
+        "description5": "Obtén resultados de calidad usando nuestros agentes autonómos.",
+        "tag1": "Persistente",
+        "tag2": "Integraciones",
+        "tag3": "Colaborativo",
+        "tag4": "Portable",
+        "tag5": "Poderoso"
 
 
     },
     "contact":{
         "title": "Comienza tu nueva vida con",
+        "title2": "Waitlist",
+        "description": "descripción",
         "input1": "Nombre",
         "input2": "Correo electrónico",
         "input3": "Teléfono (Opcional)",
         "input4": "Mensaje (Opcional)",
-        "cta": "Enviar"
+        "cta": "Enviar",
+        "errorTitle": "Ha ocurrido un error: ",
+        "errorDescription": "Es posible que tengas un error al momento de ingresar el nombre o el correo electrónico, por favor intente nuevamente."
     
     }
 

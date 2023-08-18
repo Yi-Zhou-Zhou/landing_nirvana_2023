@@ -9,6 +9,11 @@
     }
 }
 
+@font-face {
+    font-family: Avenir Next ;
+    font-weight: bold;
+    src: url("./assets/fonts/avenir-next-lt-pro/AvenirNextLTPro-Bold.otf");
+}
 
 /* Custom fonts */
 /* @font-face {
@@ -100,4 +105,7 @@ box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 11px );
 -webkit-backdrop-filter: blur( 11px );
 border-radius: 10px;
+}
+.logo-text{
+    font-family: 'Avenir Next';
 }

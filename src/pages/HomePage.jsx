@@ -44,17 +44,14 @@ const HomePage = () => {
   return (
     <div className='dark:bg-darkBg bg-lightBg' style={{backgroundSize: "cover"}}>
       <Navbar setColorMode={setColorMode} colorMode={colorMode} scrollPosition={scrollPosition} setLang={setLang} lang={lang} svgInView={svgInView}/>
-      <Header colorMode={colorMode} featureIsVisible={featureIsVisible} svgInView={svgInView} svgRef={svgRef}/>
-        <Features featuresRef={featuresRef} colorMode={colorMode}/>
-      <div ref={containerRef}
-        animate={{
-          
-        }}
-      > 
+      <main>
+        <Header colorMode={colorMode} featureIsVisible={featureIsVisible} svgInView={svgInView} svgRef={svgRef}/>
+        <Features featuresRef={featuresRef} colorMode={colorMode}/>      
         <About currEl={currEl} setCurrEl={setCurrEl} colorMode={colorMode} lang={lang} />
-        <Contact/>
+        <Contact/>    
+      </main>
+      <footer></footer>
 
-      </div>
     </div>
   )
 }

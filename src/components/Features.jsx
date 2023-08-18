@@ -30,7 +30,7 @@ const Features = ({featuresRef}) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true , margin: "0px 0px -200px 0px"}}
-            transition={{ duration: 1, delay: 1.25}}
+            transition={{ duration: 1}}
             variants={{
               visible: {opacity: 1},
               hidden: {opacity: 0}
@@ -43,7 +43,7 @@ const Features = ({featuresRef}) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "0px 0px -200px 0px"}}
-            transition={{ duration: 1, delay:0.5}}
+            transition={{ duration: 1}}
             variants={{
               visible: {opacity: 1},
               hidden: {opacity: 0}
@@ -56,7 +56,7 @@ const Features = ({featuresRef}) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "0px 0px -200px 0px"}}
-            transition={{ duration: 1, delay: 1.75}}
+            transition={{ duration: 1, delay: 0.5}}
             variants={{
               visible: {opacity: 1},
               hidden: {opacity: 0}
@@ -69,7 +69,7 @@ const Features = ({featuresRef}) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "0px 0px -200px 0px"}}
-            transition={{ duration: 1, delay:1}}
+            transition={{ duration: 1, delay:0.5}}
             variants={{
               visible: {opacity: 1},
               hidden: {opacity: 0}
@@ -82,7 +82,7 @@ const Features = ({featuresRef}) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "0px 0px -200px 0px"}}
-            transition={{ duration: 1, delay: 0.25}}
+            transition={{ duration: 1, delay: 0.5}}
             variants={{
               visible: {opacity: 1},
               hidden: {opacity: 0}
@@ -95,7 +95,7 @@ const Features = ({featuresRef}) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "0px 0px -200px 0px"}}
-            transition={{ duration: 1, delay: 1.5}}
+            transition={{ duration: 1, delay: 1}}
             variants={{
               visible: {opacity: 1},
               hidden: {opacity: 0}
@@ -108,7 +108,7 @@ const Features = ({featuresRef}) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "0px 0px -200px 0px"}}
-            transition={{ duration: 1, delay:0.75}}
+            transition={{ duration: 1, delay:1}}
             variants={{
               visible: {opacity: 1},
               hidden: {opacity: 0}
@@ -121,7 +121,7 @@ const Features = ({featuresRef}) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "0px 0px -200px 0px"}}
-            transition={{ duration: 1, delay:0.75}}
+            transition={{ duration: 1, delay:1}}
             variants={{
               visible: {opacity: 1},
               hidden: {opacity: 0}
