@@ -17,8 +17,8 @@ module.exports = {
       },
       backgroundImage:
       {
-      "darkBg": "url('assets/images/background_dark.png')",
-      "lightBg": "url('assets/images/background_light.png')",
+      "darkBg": "url('assets/images/background_dark.jpg')",
+      "lightBg": "url('assets/images/background_light.jpg')",
       "astronaut": "url('assets/images/Astronaut2.png')",
       "moon": "url('assets/images/moon.png')",
       "stars": "url('assets/images/stars.png')",
