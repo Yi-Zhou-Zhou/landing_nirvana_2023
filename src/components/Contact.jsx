@@ -35,11 +35,28 @@ const Contact = () => {
     return re.test(email);
   }
   
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     if (!formValues.name || !validateEmail(formValues.email)){
       setOpen(true)
       return
     }
+
+    try{
+      const response = await fetch("https://atnoywuau4jzeq6wrpbpfzk2am0dmqjv.lambda-url.us-east-1.on.aws/", {
+        method:"POST",
+        headers:{
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ "name": formValues.name, "email": formValues.email ,"phone": formValues.phone ? formValues.phone : "", "message": formValues.message ? formValues.message : "" })
+      })
+      const result = await response.json()
+      console.log(result)
+    }catch (error){
+      console.log(error)
+    }
+   
+    
   }
   return (
     <motion.section id='contact' className='section flex py-20 bg-[#091455]  flex-wrap px-8 md:px-48 xs:gap-8 sm:gap-16  w-screen overflow-hidden'

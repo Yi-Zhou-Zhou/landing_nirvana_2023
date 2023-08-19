@@ -47,7 +47,7 @@ const Header = ({colorMode, featureIsVisible, svgInView, svgRef}) => {
           </div>
           <p className='text-2xl dark:text-[#faf5e8] text-black inline-block mb-36 md:mb-0 w-full font-semibold'>{t("header.description")}</p>
         </div>
-        <motion.div className='hover:cursor-pointer font-bold  flex  group'
+        <motion.a href='#contact' className='hover:cursor-pointer font-bold  flex  group'
         initial={{
           y:0
         }}
@@ -68,7 +68,7 @@ const Header = ({colorMode, featureIsVisible, svgInView, svgRef}) => {
         >
           {t("header.cta")}
         </button>
-        </motion.div>
+        </motion.a>
     </section>
     
   )
