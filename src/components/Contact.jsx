@@ -50,7 +50,6 @@ const Contact = () => {
         },
         body: JSON.stringify({ "name": formValues.name, "email": formValues.email ,"phone": formValues.phone ? formValues.phone : "", "message": formValues.message ? formValues.message : "" })
       })
-      const result = await response.json()
       console.log(result)
     }catch (error){
       console.log(error)
