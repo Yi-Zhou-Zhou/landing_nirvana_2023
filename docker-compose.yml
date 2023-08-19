@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  #frontend:
+  #  build:
+  #    context: ./frontend/
+  #  env_file:
+  #    - ~/.envs/frontend.env
+  #  image: local/frontend:dev
+  #  container_name: frontend_dev
+  #  volumes:
+  #    - ./frontend/:/app/
+  #    - ./frontend/dist/:/app/dist
+
+
+  nginx_proxy:
+    image: linuxserver/swag:2.5.0
+    container_name: nginx_proxy
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Santiago
+      - URL=nirvana-ai.com
+      - SUBDOMAINS=www,
+      - VALIDATION=http
+      - EMAIL=bgonzalez@myfuture.ai
+      - ONLY_SUBDOMAINS=false #optional
+    volumes:
+      - ./frontend/dist/:/config/www/
+      - /home/ubuntu/data/config:/config
+      - /home/ubuntu/data:/data
+    ports:
+      - 443:443
+      - 80:80 #optional
