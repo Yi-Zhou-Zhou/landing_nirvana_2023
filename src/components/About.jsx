@@ -37,7 +37,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
         }
         return prevValue + 1;
       });
-    }, 4000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [])
   
@@ -558,7 +558,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
               src={images[selectedImage]}
               alt="src"
               transition={{
-                duration: 3
+                duration: 2
               }}
             />
         </motion.div>

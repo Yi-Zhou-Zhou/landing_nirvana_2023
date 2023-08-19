@@ -62,7 +62,7 @@ const HomePage = () => {
         <About currEl={currEl} setCurrEl={setCurrEl} colorMode={colorMode} lang={lang} />
         <Contact setOpen={setOpen} setAlertInfo={setAlertInfo}/>    
       </main>
-      {open && <motion.div className={`${alertInfo.status === "error" ? 'bg-red-100 border-red-400 text-red-700' : 'bg-green-100 border-red-400 text-red-700'} border px-4 py-3 rounded fixed bottom-0 w-11/12 z-50 left-1/2 -translate-x-1/2`} role="alert"
+      {open && <motion.div className={`${alertInfo.status === "error" ? 'bg-red-100 border-red-400 text-red-700' : 'bg-green-100 border-green-400 text-green-700'} border px-4 py-3 rounded fixed bottom-0 w-11/12 z-50 left-1/2 -translate-x-1/2`} role="alert"
         initial="hidden"
         animate="visible"
         variants={variants}

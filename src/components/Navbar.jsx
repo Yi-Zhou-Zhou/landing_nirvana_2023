@@ -56,7 +56,7 @@ const Navbar = ({colorMode, setColorMode, scrollPosition, setLang, lang, svgInVi
            
            transition={{
             duration: 1
-           }}>Nirvana-Ai</motion.p>
+           }}>Nirvana-AI</motion.p>
       </a>
     
       <ul className='hidden md:flex items-center gap-8'>
