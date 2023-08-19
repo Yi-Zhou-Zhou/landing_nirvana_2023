@@ -1,0 +1,19 @@
+## Version 2023/04/13 - Changelog: https://github.com/linuxserver/docker-swag/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        server_name _;
+        return 301 https://$host$request_uri;
+}
+
+# main server block
+server {
+        listen 443 ssl;
+
+        server_name nirvana-ai.com;
+        include /config/nginx/ssl.conf;
+        location / {
+            root /config/www/;
+        try_files $uri $uri/ /index.html;
+        }
+}
