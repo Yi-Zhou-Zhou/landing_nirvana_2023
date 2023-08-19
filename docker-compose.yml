@@ -28,7 +28,7 @@ services:
       - EMAIL=bgonzalez@myfuture.ai
       - ONLY_SUBDOMAINS=false #optional
     volumes:
-      - ./frontend/dist/:/config/www/
+      - ./dist/:/config/www/
       - /home/ubuntu/data/config:/config
       - /home/ubuntu/data:/data
     ports:
