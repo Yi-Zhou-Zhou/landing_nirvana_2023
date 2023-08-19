@@ -54,13 +54,16 @@
     "contact": {
         "title": "Start Your New Life with",
         "title2": "Waitlist",
-        "description": "description",
+        "description": "Sign up now for a 60-day free trial to experience the best AI platform on the market. Limited spots",
         "input1": "Name",
         "input2": "Email",
         "input3": "Phone (Optional)",
         "input4": "Message (Optional)",
         "cta": "Send",
+        "successTitle": "Success: ",
+        "successDescription": "The form has been successfully submitted.",
         "errorTitle": "An error ocurred: ",
-        "errorDescription": "It is possible that you have an error when entering the name or email, please try again."
+        "errorDescription1": "It is possible that you have an error when entering the name or email, please try again.",
+        "errorDescription2": "An error occurred while submitting the form, please try again."
     }
 }

@@ -57,14 +57,17 @@
     "contact":{
         "title": "Comienza tu nueva vida con",
         "title2": "Waitlist",
-        "description": "descripción",
+        "description": "Regístrate ya para una prueba gratuita de 60 días para probar la mejor plataforma de IA del mercado. Cupos limitados.",
         "input1": "Nombre",
         "input2": "Correo electrónico",
         "input3": "Teléfono (Opcional)",
         "input4": "Mensaje (Opcional)",
         "cta": "Enviar",
+        "successTitle": "Éxito: ",
+        "successDescription": "Se ha enviado el formulario exitosamente",
         "errorTitle": "Ha ocurrido un error: ",
-        "errorDescription": "Es posible que tengas un error al momento de ingresar el nombre o el correo electrónico, por favor intente nuevamente."
+        "errorDescription1": "Es posible que tengas un error al momento de ingresar el nombre o el correo electrónico, por favor intente nuevamente.",
+        "errorDescription2": "Se ha producido un error al enviar el formulario, intente nuevamente."
     
     }
 

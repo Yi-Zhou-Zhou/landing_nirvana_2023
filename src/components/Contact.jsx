@@ -2,9 +2,8 @@ import React, {useState} from 'react'
 import { motion } from 'framer-motion'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 import { useTranslation } from 'react-i18next';
-const Contact = () => {
+const Contact = ({setOpen, setAlertInfo}) => {
   const { height, width } = useWindowDimensions();
-  const [open, setOpen] = useState(false)
   const [formValues, setFormVallues] = useState({
     name: "",
     email :"",
@@ -37,7 +36,13 @@ const Contact = () => {
   
   const handleSubmit = async() => {
     if (!formValues.name || !validateEmail(formValues.email)){
+      const newAlert = {
+        title: "contact.errorTitle",
+        description: "contact.errorDescription1",
+        status: "error"
+      }
       setOpen(true)
+      setAlertInfo(newAlert)
       return
     }
 
@@ -50,15 +55,28 @@ const Contact = () => {
         },
         body: JSON.stringify({ "name": formValues.name, "email": formValues.email ,"phone": formValues.phone ? formValues.phone : "", "message": formValues.message ? formValues.message : "" })
       })
-      console.log(result)
+      const newAlert = {
+        title: "contact.successTitle",
+        description: "contact.successDescription",
+        status: "success"
+      }
+      setOpen(true)
+      setAlertInfo(newAlert)
     }catch (error){
       console.log(error)
+      const newAlert = {
+        title: "contact.errorTitle",
+        description: "contact.errorDescription2",
+        status: "error"
+      }
+      setOpen(true)
+      setAlertInfo(newAlert)
     }
    
     
   }
   return (
-    <motion.section id='contact' className='section flex py-20 bg-[#091455]  flex-wrap px-8 md:px-48 xs:gap-8 sm:gap-16  w-screen overflow-hidden'
+    <motion.section id='contact' className='section flex py-20 bg-[#091455]  flex-wrap px-8 md:px-48 xs:gap-8 sm:gap-16  w-screen overflow-hidden '
       initial="hidden"
       whileInView="visible"
       variants={moveToRight}
@@ -77,10 +95,10 @@ const Contact = () => {
           duration: 1
         }}
       >
-        <div className='flex flex-col gap-4'> 
+        <div className='flex flex-col gap-4 max-w-2xl'> 
           <div>
             <p className='text-4xl w-fit text-white'>{t("contact.title2")}</p>
-            <p className='text-md w-fit text-white'>{t("contact.description")}</p>
+            <p className='text-md w-fit text-white  pt-2'>{t("contact.description")}</p>
           </div>
           <div>
             <p className='text-4xl w-fit text-white'>{t("contact.title")}</p>
@@ -100,11 +118,11 @@ const Contact = () => {
         }}
         >
           <div className="relative z-0 w-5/12">
-            <input type="text" onChange={handleChange} id="name" name="name" value={formValues.name} className="block py-2.5 px-0 w-full text-sm text-white  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+            <input autoComplete='off' type="text" onChange={handleChange} id="name" name="name" value={formValues.name} className="block py-2.5 px-0 w-full text-sm text-white  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
             <label htmlFor="name" className="absolute text-sm  dark:text-white  duration-300 transform -translate-y-6 text-white scale-75 top-0 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("contact.input1")}</label>
           </div>
           <div className="relative z-0 w-5/12">
-            <input type="text" id="email" onChange={handleChange}  name="email" value={formValues.email} className="block py-2.5 px-0 w-full text-sm  text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+            <input autoComplete='off'  type="text" id="email" onChange={handleChange}  name="email" value={formValues.email} className="block py-2.5 px-0 w-full text-sm  text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
             <label htmlFor="email"  className="absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-0 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("contact.input2")}</label>
           </div>
         </motion.div>
@@ -115,11 +133,11 @@ const Contact = () => {
           duration: 1
         }}>
           <div className="relative z-0 w-5/12">
-            <input type="text" id="phone" onChange={handleChange}  name="phone" value={formValues.phone} className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+            <input autoComplete='off'  type="text" id="phone" onChange={handleChange}  name="phone" value={formValues.phone} className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
             <label htmlFor="phone" className="absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-0 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("contact.input3")}</label>
           </div>
           <div className="relative z-0 w-5/12">
-            <input type="text" id="message" onChange={handleChange}  name='message' value={formValues.message} className="block py-2.5 px-0 w-full text-sm text-white  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+            <input autoComplete='off'  type="text" id="message" onChange={handleChange}  name='message' value={formValues.message} className="block py-2.5 px-0 w-full text-sm text-white  bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-white dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
             <label htmlFor="message" className="absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-0 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("contact.input4")}</label>
           </div>
         </motion.div>
@@ -129,14 +147,8 @@ const Contact = () => {
           duration: 1
         }}>{t("contact.cta")}</motion.button>
       </motion.form>
-        {open && <div class={`bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative w-full`} role="alert">
-        <strong class="font-bold">{t("contact.errorTitle")}</strong>
-        <span class="block sm:inline">{t("contact.errorDescription")}</span>
-        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-          <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" onClick={() => setOpen(false)}><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-        </span>
-        </div>
-        }   
+         
+        
     </motion.section>
     
   )

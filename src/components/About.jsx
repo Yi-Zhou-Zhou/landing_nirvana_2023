@@ -225,18 +225,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
            transition={textTagTransition}>
             <p className='bg-[#b5179e]  rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>{t("applications.tag2")}</p>
 
-            <div className='bg-[#b5179e] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
-           initial="hidden"
-           whileInView="visible"
-           variants={{
-            hidden: { marginTop: "150px", opacity: 0},
-            visible: {marginTop: "0px", opacity: 1}
-           }}
-           transition={{
-            duration: 1,
-            delay: 0.5
-           }}
-           >
+            <div className='bg-[#b5179e] rounded-full font-semibold px-4 py-2 mb-4 w-fit'>
             <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
             
           </div>
@@ -282,16 +271,6 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
             <p className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>{t("applications.tag3")}</p>
 
             <div className='bg-[#4361ee] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
-           initial="hidden"
-           whileInView="visible"
-           variants={{
-            hidden: { marginTop: "150px", opacity: 0},
-            visible: {marginTop: "0px", opacity: 1}
-           }}
-           transition={{
-            duration: 1,
-            delay: 0.5
-           }}
            >
             <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
             
@@ -358,16 +337,6 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
             <p className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>{t("applications.tag4")}</p>
 
             <div className='bg-[#3F37C9] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
-           initial="hidden"
-           whileInView="visible"
-           variants={{
-            hidden: { marginTop: "150px", opacity: 0},
-            visible: {marginTop: "0px", opacity: 1}
-           }}
-           transition={{
-            duration: 1,
-            delay: 0.5
-           }}
            >
             <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
             
@@ -413,16 +382,7 @@ const About = ({currEl, setCurrEl, colorMode, lang}) => {
             <p className='bg-[#4895EF]  rounded-full font-semibold px-4 py-2 mb-4 w-fit text-white'>{t("applications.tag5")}</p>
 
             <div className='bg-[#4895EF] rounded-full font-semibold px-4 py-2 mb-4 w-fit'
-           initial="hidden"
-           whileInView="visible"
-           variants={{
-            hidden: { marginTop: "150px", opacity: 0},
-            visible: {marginTop: "0px", opacity: 1}
-           }}
-           transition={{
-            duration: 1,
-            delay: 0.5
-           }}
+           
            >
             <a href='#contact' aria-label='contact' className='flex gap-2 items-center text-white'>{t("applications.cta")}<ArrowRight size={18}/></a>
             
