@@ -23,12 +23,13 @@ services:
       - PGID=1000
       - TZ=America/Santiago
       - URL=nirvana-ai.com
-      - SUBDOMAINS=www,
+      - SUBDOMAINS=www,policy
       - VALIDATION=http
       - EMAIL=bgonzalez@myfuture.ai
       - ONLY_SUBDOMAINS=false #optional
     volumes:
       - ./dist/:/config/www/
+      - ./policy.html:/config/
       - /home/ubuntu/data/config:/config
       - /home/ubuntu/data:/data
     ports:

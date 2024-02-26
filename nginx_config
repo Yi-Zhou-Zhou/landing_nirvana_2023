@@ -17,3 +17,14 @@ server {
         try_files $uri $uri/ /index.html;
         }
 }
+
+server {
+        listen 443 ssl;
+
+        server_name policy.nirvana-ai.com;
+        include /config/nginx/ssl.conf;
+        location / {
+            root /config/;
+        try_files $uri $uri/ /policy.html;
+        }
+}
