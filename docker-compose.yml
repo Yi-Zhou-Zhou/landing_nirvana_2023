@@ -29,7 +29,7 @@ services:
       - ONLY_SUBDOMAINS=false #optional
     volumes:
       - ./dist/:/config/www/
-      - ./policy.html:/config/
+      - ./policy.html:/config/policy.html
       - /home/ubuntu/data/config:/config
       - /home/ubuntu/data:/data
     ports:
