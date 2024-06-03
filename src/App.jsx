@@ -1,12 +1,30 @@
-import { Route, Routes } from 'react-router-dom'
-import HomePage from './pages/HomePage'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import SubscriptionPage from './pages/SubscriptionPage';
+import GetLicensePage from './pages/GetLicensePage';
 
-function App() {
+const router = createBrowserRouter( [
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/pricing",
+    element: <SubscriptionPage />,
+    children: [
+      {
+        path: "license",
+        element: <GetLicensePage />,
+      },
+    ],
+  },
+] );
+
+function App ()
+{
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-    </Routes>
-  )
+    <RouterProvider router={ router } />
+  );
 }
 
-export default App
+export default App;
