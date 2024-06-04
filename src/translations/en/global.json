@@ -83,7 +83,11 @@
         "descriptionPeriodMonthsMonthly": "Pay on a monthly basis and enjoy flexibility in your subscription",
         "descriptionPeriodMonthsYearly": "Save big with our annual plan and enjoy uninterrupted access all year round.",
         "errorFormMessage": "Please fill in all fields.",
-        "errorEmailMessage": "Invalid email address. Please enter a valid email."
+        "errorEmailMessage": "Invalid email address. Please enter a valid email.",
+        "titleDetailsMembership": "Membership",
+        "titleDetailsPeriod": "Months",
+        "titleDetailsSavings": "Savings",
+        "disclaimerConversorOrigin": "Exchange rate taken from Google"
     },
     "contact": {
         "title": "Start Your New Life with",

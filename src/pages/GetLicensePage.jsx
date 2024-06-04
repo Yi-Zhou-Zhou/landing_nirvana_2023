@@ -1,8 +1,10 @@
+import { CircularProgress } from '@nextui-org/react';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { COUNTRIES } from '../utils/CONSTANTS';
+import PaymentApi from '../api/paymentsApi';
 import PaymentCard from '../components/PaymentCard';
-import { CircularProgress } from '@nextui-org/react';
+import { COUNTRIES } from '../utils/CONSTANTS';
+import { getCountryCurrency } from '../utils/utilities';
 
 const GetLicensePage = () =>
 {
@@ -15,32 +17,29 @@ const GetLicensePage = () =>
     const [ email, setEmail ] = useState( "" );
     const [ phone, setPhone ] = useState( "" );
     const [ city, setCity ] = useState( "" );
-    const [ country, setCountry ] = useState( "" );
-    const [ subscriptionType, setSubscriptionType ] = useState( "" );
-    const [ periodMonths, setPeriodMonths ] = useState( "" );
+    const [ country, setCountry ] = useState( "Chile" );
+    const [ subscriptionType, setSubscriptionType ] = useState( "0" ); // 0 (basic) | 1 (pro)
+    const [ periodMonths, setPeriodMonths ] = useState( "monthly" ); //monthly | yearly
     const [ userType, setUserType ] = useState( "open" );
     const [ formError, setFormError ] = useState( "" );
     const [ emailError, setEmailError ] = useState( "" );
     const [ subtotal, setSubtotal ] = useState( 0 );
-    const [ savings, setSavings ] = useState( 0 );
+    const [ savings, setSavings ] = useState( 0 ); // for discounts if there are any
     const [ total, setTotal ] = useState( 0 );
-    const [currency, setCurrency] = useState("");
-
-    useEffect(() => {
-        if (currency){
-
-            setCurrency(COUNTRIES[country].currency)
-            console.log(COUNTRIES[country].currency)
-        }
-    }, [country])
-    console.log(currency)
+    const [ currency, setCurrency ] = useState( "" );
 
 
 
-    const handleInputChange = ( event ) =>
+    useEffect( () =>
+    {
+        getCountryCurrency( periodMonths, country, setCurrency, setSubtotal, setTotal, savings ).then( () => { } ).catch( err => console.error( err ) );
+
+    }, [ periodMonths, country ] );
+
+    const handleInputChange = async ( event ) =>
     {
         const { name, value } = event.target;
-        console.log( name, value );
+
         switch ( name )
         {
             case 'rut':
@@ -85,7 +84,7 @@ const GetLicensePage = () =>
         }
     };
 
-    const handleSubmitForm = ( event ) =>
+    const handleSubmitForm = async ( event ) =>
     {
         event.preventDefault();
         // /verify if a field is empty
@@ -103,9 +102,10 @@ const GetLicensePage = () =>
         )
         {
             setFormError( t( "applications.errorFormMessage" ) );
-            setTimeout(() => {
+            setTimeout( () =>
+            {
                 setFormError( "" );
-            }, 3000)
+            }, 3000 );
             return;
         }
         setFormError( "" );
@@ -123,12 +123,20 @@ const GetLicensePage = () =>
             period_months: periodMonths,
             user_type: userType,
             months: periodMonths === 'yearly' ? 12 : 1,
+        };
+
+        try
+        {
+            const data = await PaymentApi.initPayment( payload );
+            window.location.href = data.url;
+            setLoading( false );
+
+        } catch ( error )
+        {
+            setLoading( false );
+            console.error( error );
+            setError( error.message );
         }
-        console.log(payload)
-        // Lógica para enviar el formulario
-        // ...
-        setLoading( false );
-        console.log( "Formulario Enviado" );
     };
 
     return (
@@ -140,7 +148,7 @@ const GetLicensePage = () =>
                     <li className="after:border-1 flex items-center text-primary-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10">
                         <span className="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
                             <svg className="me-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
                             Checkout
                         </span>
@@ -167,7 +175,7 @@ const GetLicensePage = () =>
                                 <div>
                                     <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"> { t( "applications.labelInputEmail" ) }* </label>
                                     <input onChange={ handleInputChange } name="email" type="email" id="email" className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" placeholder="name@mail.com" required />
-                                    {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
+                                    { emailError && <p className="text-red-500 text-sm">{ emailError }</p> }
                                 </div>
 
                                 <div>
@@ -178,7 +186,7 @@ const GetLicensePage = () =>
                                     <select onChange={ handleInputChange } name="country" id="country" className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500">
                                         {
                                             COUNTRIES.map( ( country, index ) => (
-                                                <option id={ index } value={ country.label }>{ country.label }</option>
+                                                <option key={ index } id={ country.label } value={ country.label }>{ country.label }</option>
                                             ) )
                                         }
                                     </select>
@@ -196,7 +204,7 @@ const GetLicensePage = () =>
                                     <div className="flex items-center">
 
                                         <div className="relative w-full">
-                                            <input onChange={ handleInputChange } name="phone" type="text" id="phone" className="z-20 block w-full rounded-lg border border-s-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:border-s-gray-700  dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500"  placeholder="1234567890" required />
+                                            <input onChange={ handleInputChange } name="phone" type="text" id="phone" className="z-20 block w-full rounded-lg border border-s-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:border-s-gray-700  dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500" placeholder="1234567890" required />
                                         </div>
                                     </div>
                                 </div>
@@ -270,25 +278,34 @@ const GetLicensePage = () =>
                         <div className="flow-root">
                             <div className="-my-3 divide-y divide-gray-200 dark:divide-gray-800">
                                 <dl className="flex items-center justify-between gap-4 py-3">
+                                    <dt className="text-base font-normal text-gray-500 dark:text-gray-400">{ t( "applications.titleDetailsMembership" ) }</dt>
+                                    <dd className="text-base font-medium text-gray-900 dark:text-white">{ subscriptionType === "0" ? t( "applications.titleSubscriptionTypeBasic" ) : t( "applications.titleSubscriptionTypePro" ) }</dd>
+                                </dl>
+                                <dl className="flex items-center justify-between gap-4 py-3">
+                                    <dt className="text-base font-normal text-gray-500 dark:text-gray-400">{ t( "applications.titleDetailsPeriod" ) }</dt>
+                                    <dd className="text-base font-medium text-gray-900 dark:text-white">{ periodMonths === "monthly" ?  t( "applications.titlePeriodMonthsMonthly" ) : t( "applications.titlePeriodMonthsYearly" ) }</dd>
+                                </dl>
+                                <dl className="flex items-center justify-between gap-4 py-3">
                                     <dt className="text-base font-normal text-gray-500 dark:text-gray-400">Subtotal</dt>
-                                    <dd className="text-base font-medium text-gray-900 dark:text-white">$8,094.00</dd>
+                                    <dd className="text-base font-medium text-gray-900 dark:text-white">{ `${ currency } ${ subtotal }` }</dd>
                                 </dl>
 
                                 <dl className="flex items-center justify-between gap-4 py-3">
-                                    <dt className="text-base font-normal text-gray-500 dark:text-gray-400">Savings</dt>
-                                    <dd className="text-base font-medium text-green-500">0</dd>
+                                    <dt className="text-base font-normal text-gray-500 dark:text-gray-400">{ t( "applications.titleDetailsSavings" ) }</dt>
+                                    <dd className="text-base font-medium text-green-500">{ `${ currency } ${ savings }` }</dd>
                                 </dl>
 
                                 <dl className="flex items-center justify-between gap-4 py-3">
                                     <dt className="text-base font-bold text-gray-900 dark:text-white">Total</dt>
-                                    <dd className="text-base font-bold text-gray-900 dark:text-white">$8,392.00</dd>
+                                    <dd className="text-base font-bold text-gray-900 dark:text-white">{ `${ currency } ${ total }` }</dd>
                                 </dl>
                             </div>
+                            <p className='mt-1 text-xs text-slate-600'>{t("applications.disclaimerConversorOrigin")}</p>
                         </div>
 
                         <div className="space-y-3">
-                            <button onClick={(e) => handleSubmitForm(e)} type="button" className="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4  focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{ loading ? <CircularProgress /> : t( "applications.titleProceedPayment" ) }</button>
-                            {formError && <p className="text-red-500">{formError}</p>}
+                            <button onClick={ ( e ) => handleSubmitForm( e ) } type="button" className="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4  focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{ loading ? <CircularProgress color='secondary' size='sm' /> : t( "applications.titleProceedPayment" ) }</button>
+                            { formError && <p className="text-red-500">{ formError }</p> }
 
                             {/* <p className="text-sm font-normal text-gray-500 dark:text-gray-400">One or more items in your cart require an account. <a href="#" title="" className="font-medium text-primary-700 underline hover:no-underline dark:text-primary-500">Sign in or create an account now.</a>.</p> */ }
                         </div>

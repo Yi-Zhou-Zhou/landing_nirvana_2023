@@ -84,7 +84,11 @@
         "descriptionPeriodMonthsMonthly": "Paga de forma mensual y disfruta de flexibilidad en tu suscripción.",
         "descriptionPeriodMonthsYearly": "Ahorra con nuestro plan anual y disfruta de acceso ininterrumpido durante todo el año.",
         "errorFormMessage": "Por favor, complete todos los campos.",
-        "errorEmailMessage": "Dirección de correo electrónico no válida. Por favor, ingrese un correo electrónico válido."
+        "errorEmailMessage": "Dirección de correo electrónico no válida. Por favor, ingrese un correo electrónico válido.",
+        "titleDetailsMembership": "Membresía",
+        "titleDetailsPeriod": "Período",
+        "titleDetailsSavings": "Descuento",
+        "disclaimerConversorOrigin": "Tipo de cambio del día de Google"
     },
     "contact":{
         "title": "Comienza tu nueva vida con",
