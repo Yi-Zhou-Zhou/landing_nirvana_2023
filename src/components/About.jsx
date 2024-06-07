@@ -617,7 +617,7 @@ const About = ( { currEl, setCurrEl, colorMode, lang } ) =>
                 </>
                 :
                 <>
-                  <motion.p id="joinus" className='text-5xl mb-8 dark:text-[#faf5e8] text-black font-semibold'
+                  <motion.p id="pricing" className='text-5xl mb-8 dark:text-[#faf5e8] text-black font-semibold'
                     initial="hidden"
                     whileInView="visible"
                     variants={ textPVariant }
@@ -777,7 +777,7 @@ const About = ( { currEl, setCurrEl, colorMode, lang } ) =>
       </div>
 
 
-      <div id="joinus" className='' ref={ sixthRef }>
+      <div id="pricing" className='' ref={ sixthRef }>
         <div className='w-full flex  items-center sm:flex-row flex-col-reverse justify-center md:gap-24 gap-24 md:px-48 px-8 '>
           <div className='sm:w-full'>
             <img src={ `https://nirvana-public.s3.us-west-2.amazonaws.com/landing/src/assets/extension_${ colorMode }_${ lang }.png` } alt="nirvana functionality" className='rounded-xl' />

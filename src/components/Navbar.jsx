@@ -62,6 +62,7 @@ const Navbar = ({colorMode, setColorMode, scrollPosition, setLang, lang, svgInVi
       <ul className='hidden md:flex items-center gap-8'>
         <li className='text-xl font-bold' ><a href='#features' aria-label="features">{t("navbar.benefits")}</a></li>
         <li className='text-xl font-bold'><a href='#about' aria-label="about">{t("navbar.applications")}</a></li>
+        <li className='text-xl font-bold'><a href='#pricing' aria-label="contact">{t("navbar.pricing")}</a></li>
         <li className='text-xl font-bold'><a href='#contact' aria-label="contact">{t("navbar.contact")}</a></li>
         
         
