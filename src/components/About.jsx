@@ -73,7 +73,9 @@ const About = ( { currEl, setCurrEl, colorMode, lang } ) =>
     setIsLoading( true );
 
     const payload = {
-      license_code: licenseCode
+      license_code: licenseCode,
+      is_renew: 0,
+      preferred_language: lang
     };
     try
     {
@@ -598,7 +600,7 @@ const About = ( { currEl, setCurrEl, colorMode, lang } ) =>
                   {/* </Link> */ }
 
                   {/* <Link to={ "https://dev.nirvana-ai.app/checkout-form" } target='_blank'> */ }
-                  <Link to={ "/pricing/license" }>
+                  <Link to={ "/pricing" }>
 
                   <motion.div
                     className='w-80 cursor-pointer'
@@ -830,7 +832,7 @@ const About = ( { currEl, setCurrEl, colorMode, lang } ) =>
             {/* </Link> */ }
 
             {/* <Link to={ "https://dev.nirvana-ai.app/checkout-form" } target='_blank'> */}
-            <Link to={ "/pricing/license" }>
+            <Link to={ "/pricing" }>
 
               <motion.div
                 className='w-80 cursor-pointer'

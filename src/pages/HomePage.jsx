@@ -33,6 +33,16 @@ const HomePage = () => {
   }; 
 
   useEffect(() => {
+    const userLanguage = navigator.language.split("-")[0]
+
+    if (userLanguage === "es" || userLanguage === "en") {
+      setLang(userLanguage)
+    } else {
+      setLang("en")
+    }
+  }, [])
+
+  useEffect(() => {
     i18n.changeLanguage(lang)
   }, [lang])
 

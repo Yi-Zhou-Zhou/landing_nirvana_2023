@@ -1,6 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import SubscriptionPage from './pages/SubscriptionPage';
 import GetLicensePage from './pages/GetLicensePage';
 
 const router = createBrowserRouter( [
@@ -10,13 +9,7 @@ const router = createBrowserRouter( [
   },
   {
     path: "/pricing",
-    element: <SubscriptionPage />,
-    children: [
-      {
-        path: "license",
-        element: <GetLicensePage />,
-      },
-    ],
+    element: <GetLicensePage />,
   },
 ] );
 
